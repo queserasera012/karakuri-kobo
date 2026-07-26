@@ -1,0 +1,2467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#141B36">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIyIiBmaWxsPSIjMTQxQjM2Ii8+PGNpcmNsZSBjeD0iMTgiIGN5PSIxNiIgcj0iMS42IiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iODIiIGN5PSIxMyIgcj0iMS4zIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iODgiIGN5PSIyNyIgcj0iMS41IiBmaWxsPSIjZmZmIi8+PHBvbHlnb24gcG9pbnRzPSI0MS45LDE2LjUgNDMuMSw2LjUgNTYuOSw2LjUgNTguMSwxNi41IDY4LjAsMjAuNiA3NS45LDE0LjQgODUuNiwyNC4xIDc5LjQsMzIuMCA4My41LDQxLjkgOTMuNSw0My4xIDkzLjUsNTYuOSA4My41LDU4LjEgNzkuNCw2OC4wIDg1LjYsNzUuOSA3NS45LDg1LjYgNjguMCw3OS40IDU4LjEsODMuNSA1Ni45LDkzLjUgNDMuMSw5My41IDQxLjksODMuNSAzMi4wLDc5LjQgMjQuMSw4NS42IDE0LjQsNzUuOSAyMC42LDY4LjAgMTYuNSw1OC4xIDYuNSw1Ni45IDYuNSw0My4xIDE2LjUsNDEuOSAyMC42LDMyLjAgMTQuNCwyNC4xIDI0LjEsMTQuNCAzMi4wLDIwLjYiIGZpbGw9IiNDNjkxMTAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMS42KSIvPjxwb2x5Z29uIHBvaW50cz0iNDEuOSwxNi41IDQzLjEsNi41IDU2LjksNi41IDU4LjEsMTYuNSA2OC4wLDIwLjYgNzUuOSwxNC40IDg1LjYsMjQuMSA3OS40LDMyLjAgODMuNSw0MS45IDkzLjUsNDMuMSA5My41LDU2LjkgODMuNSw1OC4xIDc5LjQsNjguMCA4NS42LDc1LjkgNzUuOSw4NS42IDY4LjAsNzkuNCA1OC4xLDgzLjUgNTYuOSw5My41IDQzLjEsOTMuNSA0MS45LDgzLjUgMzIuMCw3OS40IDI0LjEsODUuNiAxNC40LDc1LjkgMjAuNiw2OC4wIDE2LjUsNTguMSA2LjUsNTYuOSA2LjUsNDMuMSAxNi41LDQxLjkgMjAuNiwzMi4wIDE0LjQsMjQuMSAyNC4xLDE0LjQgMzIuMCwyMC42IiBmaWxsPSIjRkZDOTREIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMjMiIGZpbGw9IiMxNDFCMzYiLz48cGF0aCBkPSJNNTEgMzNjMC02IDQtMTAgOS0xMi0xIDYtNCAxMC05IDEyeiIgZmlsbD0iIzNCODQ2NSIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjUxIiByeD0iMjEiIHJ5PSIyMiIgZmlsbD0iIzVFQ0I5MyIvPjxlbGxpcHNlIGN4PSI1MCIgY3k9IjU1IiByeD0iMTUiIHJ5PSIxNSIgZmlsbD0iI0NGRjNERiIvPjxjaXJjbGUgY3g9IjQzIiBjeT0iNDkiIHI9IjMuNCIgZmlsbD0iIzFFM0EyQyIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iNDkiIHI9IjMuNCIgZmlsbD0iIzFFM0EyQyIvPjxjaXJjbGUgY3g9IjM2IiBjeT0iNTciIHI9IjMuMiIgZmlsbD0iI0ZGOUU4RiIvPjxjaXJjbGUgY3g9IjY0IiBjeT0iNTciIHI9IjMuMiIgZmlsbD0iI0ZGOUU4RiIvPjxwYXRoIGQ9Ik00MyA1OWM0IDQgMTAgNCAxNCAwIiBzdHJva2U9IiMxRTNBMkMiIHN0cm9rZS13aWR0aD0iMi42IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="からくり工房">
+<title>モコのからくり工房</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+/* ===== BUILD CONFIG (build.jsが書き換える。手動編集しない) ===== */
+const EDITION = "lite";      // "full" | "lite"
+const APP_VERSION = "1.9.5";
+const STORE_URL = "https://shinme-lab.booth.pm/";
+const LITE = (EDITION === "lite");
+const VER  = (APP_VERSION.indexOf("__")===0) ? "dev" : APP_VERSION;
+const SHOP = (STORE_URL.indexOf("__")===0) ? "" : STORE_URL;
+/* ライト版の制限 */
+const LITE_PROFILES=2, LITE_MAXLV=3, LITE_HALF=4;  // Lv1〜3・各前半4面・なかま2人
+
+/* ===== 学年帯(開始レベルのみ。まなびクエストから簡素化) ===== */
+const GRADES={
+ kinder:{label:'ようちえん', start:1, autoRead:true},
+ g12:{label:'小1・小2', start:2, autoRead:false},
+ g34:{label:'小3・小4', start:3, autoRead:false},
+ g56:{label:'小5・小6', start:5, autoRead:false}
+};
+const THEMES=['adventure','ocean','pastel','forest','sunset'];
+const THEME_LABEL={adventure:'🌌 よぞら',ocean:'🐬 なつのうみ',pastel:'🍓 ゆめかわ',forest:'🌲 みどりのもり',sunset:'🌇 ゆうやけ'};
+const AVATARS=['🦖','🐰','🐱','🐻','🦊','🐧','🦁','🐢','🐬','🦉','🐸','🐨'];
+
+/* ===== 保存層 ===== */
+const SKEY='kk_state';
+function uuid(){try{if(crypto&&crypto.randomUUID)return crypto.randomUUID();}catch(e){}return 'id-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8);}
+function today(){return new Date().toISOString().slice(0,10);}
+function maxProfiles(){return LITE?LITE_PROFILES:12;}
+
+let S=null;
+function defState(){return {v:1, order:[], profiles:{}, pin:'1234', settings:{sound:true, read:true}, cur:null};}
+function load(){
+ try{const raw=localStorage.getItem(SKEY);if(raw){S=JSON.parse(raw);migrate();return;}}catch(e){}
+ S=defState();
+}
+function touchProfile(p){if(p)p.up=Date.now();}
+function save(){try{const p=curP();if(p&&!p.up)p.up=Date.now();localStorage.setItem(SKEY,JSON.stringify(S));}catch(e){}}
+/* ============================================================
+   かぞく同期(Supabase)— まなびクエストから移植。
+   salt 'manabiquest-sync-v1' は【しんめ工房共通】。変えると同じあいことばでも
+   別baseIdになりパスポートが繋がらない。絶対に変更しないこと。
+   サーバー(mq_syncテーブル・mq_get/mq_put RPC)はまなびと共通で変更不要。
+   ============================================================ */
+const CLOUD_ITER=310000;
+function b64u(bytes){let s='';for(let i=0;i<bytes.length;i++)s+=String.fromCharCode(bytes[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function ub64u(str){const b=atob(str.replace(/-/g,'+').replace(/_/g,'/'));const out=new Uint8Array(b.length);for(let i=0;i<b.length;i++)out[i]=b.charCodeAt(i);return out;}
+async function syncEncode(json){
+ try{ if(typeof CompressionStream!=='undefined'){
+  const stream=new Blob([json]).stream().pipeThrough(new CompressionStream('gzip'));
+  const buf=await new Response(stream).arrayBuffer();
+  return 'g'+b64u(new Uint8Array(buf));
+ } }catch(e){}
+ return 'p'+b64u(new TextEncoder().encode(json));
+}
+async function syncDecode(payload){
+ const mode=payload[0],body=payload.slice(1);
+ const bytes=ub64u(body);
+ if(mode==='g'){
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return await new Response(stream).text();
+ }
+ return new TextDecoder().decode(bytes);
+}
+/* あいことば → PBKDF2(31万回) → 512bit。前半=AES-GCM鍵 / 後半=baseId。
+   salt はしんめ工房共通(§0.1)。ゼロ知識: サーバーは平文を一切見ない。 */
+async function kdf(pass){
+ const enc=new TextEncoder();
+ const km=await crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveBits']);
+ const bits=await crypto.subtle.deriveBits(
+  {name:'PBKDF2',salt:enc.encode('manabiquest-sync-v1'),iterations:CLOUD_ITER,hash:'SHA-256'},km,512);
+ const by=new Uint8Array(bits);
+ const key=await crypto.subtle.importKey('raw',by.slice(0,32),'AES-GCM',false,['encrypt','decrypt']);
+ return {key,id:b64u(by.slice(32))};
+}
+async function cloudEncrypt(json,key){
+ const inner=await syncEncode(json);
+ const iv=crypto.getRandomValues(new Uint8Array(12));
+ const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(inner)));
+ const out=new Uint8Array(12+ct.length);out.set(iv,0);out.set(ct,12);
+ return b64u(out);
+}
+async function cloudDecrypt(payload,key){
+ const by=ub64u(payload);
+ const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:by.slice(0,12)},key,by.slice(12));
+ return await syncDecode(new TextDecoder().decode(new Uint8Array(pt)));
+}
+function rpcRow(res){
+ if(!res)return null;
+ if(Array.isArray(res))return res.length?res[0]:null;
+ return res;
+}
+/* 旧形式キー(eyJ…JWT)は apikey+Authorization 両方、新形式(sb_publishable_…)は apikey のみ */
+async function cloudCall(fn,body){
+ const hdr={'Content-Type':'application/json','apikey':S.cloud.key};
+ if(S.cloud.key.indexOf('eyJ')===0)hdr['Authorization']='Bearer '+S.cloud.key;
+ const r=await fetch(S.cloud.url.replace(/\/$/,'')+'/rest/v1/rpc/'+fn,{
+  method:'POST',headers:hdr,body:JSON.stringify(body)});
+ if(!r.ok)throw new Error('server '+r.status);
+ const t=await r.text();
+ return t?JSON.parse(t):null;
+}
+/* 1行を読む(復号済みJSON or null)。keyは呼び出し側で導出済みを渡す */
+async function cloudReadRow(rowId,key){
+ const row=rpcRow(await cloudCall('mq_get',{p_id:rowId}));
+ if(!row||!row.blob)return null;
+ try{ return JSON.parse(await cloudDecrypt(row.blob,key)); }catch(e){ return null; }
+}
+/* 1行を書く(JSONを暗号化してput) */
+async function cloudWriteRow(rowId,obj,key){
+ const blob=await cloudEncrypt(JSON.stringify(obj),key);
+ await cloudCall('mq_put',{p_id:rowId,p_blob:blob});
+}
+/* ===== からくり固有の同期ロジック ===== */
+/* baseId をあいことばから導出(保存されたpassを使う)。{key,id} を返す */
+async function cloudKeys(){
+ if(!S.cloud||!S.cloud.pass)throw new Error('あいことばが ありません');
+ return await kdf(S.cloud.pass);
+}
+/* プロフィール単位マージ(karakuri-sync-spec §3)。
+   stages: c/p/k=OR, b=min。level=max。coins等はupが新しい側。未知キー保持。 */
+function mergeProfile(local,remote){
+ if(!remote)return local;
+ if(!local)return remote;
+ const out=Object.assign({},local);   // 未知キーはlocal優先で保持
+ // stages 合流
+ const stages={};
+ const ids=new Set([...Object.keys(local.stages||{}),...Object.keys(remote.stages||{})]);
+ for(const id of ids){
+  const a=(local.stages||{})[id]||{}, b=(remote.stages||{})[id]||{};
+  const m={};
+  m.clear=!!(a.clear||b.clear); m.pit=!!(a.pit||b.pit); m.kara=!!(a.kara||b.kara);   // OR
+  const ab=a.best, bb=b.best;
+  if(ab!=null&&bb!=null)m.best=Math.min(ab,bb);           // 自己ベスト=min
+  else if(ab!=null)m.best=ab; else if(bb!=null)m.best=bb;
+  // 未知のstageキーも保持
+  for(const k in a)if(!(k in m))m[k]=a[k];
+  for(const k in b)if(!(k in m))m[k]=b[k];
+  stages[id]=m;
+ }
+ out.stages=stages;
+ out.level=Math.max(local.level||1, remote.level||1);      // level=max
+ // coins/coinCap/name/theme/avatar/grade/coinsToday等は up が新しい側を採用
+ const newer=(remote.up||0)>(local.up||0)?remote:local;
+ ['coins','coinCap','coinsDate','coinsToday','name','theme','avatar','grade','lock','placed'].forEach(k=>{
+  if(k in newer)out[k]=newer[k];
+ });
+ // collection(ずかん)は max 合流(grow-only)。実データ形式 {n:count} を保つ
+ const col={};
+ const ck=new Set([...Object.keys(local.collection||{}),...Object.keys(remote.collection||{})]);
+ for(const k of ck){
+  const m=Math.max(colN((local.collection||{})[k]), colN((remote.collection||{})[k]));
+  if(m>0)col[k]={n:m};
+ }
+ out.collection=col;
+ out.up=Math.max(local.up||0, remote.up||0);
+ // seen(解禁説明)は OR 合流
+ const seen=Object.assign({},local.seen||{},remote.seen||{});
+ out.seen=seen;
+ return out;
+}
+/* pull: クラウドから読んでローカルへ合流 */
+async function cloudPull(){
+ const {key,id}=await cloudKeys();
+ // 1) passport
+ const passport=await cloudReadRow(id+':passport',key);
+ if(passport&&passport.profiles){
+  for(const uuid in passport.profiles){
+   if(S.profiles[uuid]){
+    const pp=passport.profiles[uuid];
+    // 基本情報のみ反映(行後勝ち)。進捗はkarakuri行が持つ
+    ['name','avatar','theme','grade'].forEach(k=>{if(k in pp)S.profiles[uuid][k]=pp[k];});
+   }
+  }
+  if(passport.lock)Object.values(S.profiles).forEach(p=>{p.lock=passport.lock;});
+ }
+ // 2) karakuri(プロフィール単位マージ)
+ const remote=await cloudReadRow(id+':karakuri',key);
+ if(remote&&remote.profiles){
+  for(const uuid in remote.profiles){
+   if(S.profiles[uuid])S.profiles[uuid]=mergeProfile(S.profiles[uuid],remote.profiles[uuid]);
+   else { // リモートのみ: 上限内なら取り込む
+    if(S.order.length<maxProfiles()){S.profiles[uuid]=remote.profiles[uuid];S.order.push(uuid);}
+   }
+  }
+ }
+ // 3) collection の karakuri区画を max 合流
+ const col=await cloudReadRow(id+':collection',key);
+ if(col&&col.apps&&col.apps.karakuri){
+  for(const uuid in col.apps.karakuri){
+   if(S.profiles[uuid]){
+    const remoteCol=col.apps.karakuri[uuid]||{};
+    const lc=S.profiles[uuid].collection||{};
+    const merged=Object.assign({},lc);
+    for(const k in remoteCol){const n=Math.max(colN(merged[k]),colN(remoteCol[k]));if(n>0)merged[k]={n:n};}
+    S.profiles[uuid].collection=merged;
+   }
+  }
+ }
+ save();
+}
+/* push: ローカルを読み込み済みリモートと合成して書く */
+async function cloudPush(){
+ const {key,id}=await cloudKeys();
+ // 1) passport: リモートを読み、自分のプロフィール基本情報を反映(行後勝ち)
+ let passport=await cloudReadRow(id+':passport',key)||{profiles:{},apps:{}};
+ if(!passport.profiles)passport.profiles={};
+ if(!passport.apps)passport.apps={};
+ for(const uuid of S.order){
+  const p=S.profiles[uuid];
+  passport.profiles[uuid]=Object.assign(passport.profiles[uuid]||{},
+   {name:p.name,avatar:p.avatar,theme:p.theme,grade:p.grade});
+ }
+ passport.apps.karakuri={v:APP_VERSION,last:today()};
+ await cloudWriteRow(id+':passport',passport,key);
+ // 2) karakuri: リモートを読み、プロフィール単位マージして書く
+ let remote=await cloudReadRow(id+':karakuri',key)||{profiles:{}};
+ if(!remote.profiles)remote.profiles={};
+ const outProfiles={};
+ const allU=new Set([...S.order,...Object.keys(remote.profiles)]);
+ for(const uuid of allU){
+  const local=S.profiles[uuid];
+  const rem=remote.profiles[uuid];
+  outProfiles[uuid]=mergeProfile(local,rem);
+ }
+ await cloudWriteRow(id+':karakuri',{profiles:outProfiles},key);
+ // 3) collection: karakuri区画だけ更新、他区画は round-trip 保持
+ let col=await cloudReadRow(id+':collection',key)||{apps:{}};
+ if(!col.apps)col.apps={};
+ const kcol=col.apps.karakuri||{};
+ for(const uuid of S.order){
+  const lc=S.profiles[uuid].collection||{};
+  const rc=kcol[uuid]||{};
+  const merged=Object.assign({},rc);
+  for(const k in lc){const n=Math.max(colN(merged[k]),colN(lc[k]));if(n>0)merged[k]=n;}
+  kcol[uuid]=merged;
+ }
+ col.apps.karakuri=kcol;
+ await cloudWriteRow(id+':collection',col,key);
+ S.cloud.lastSync=Date.now();save();
+}
+
+
+function migrate(){
+ if(!S.v)S.v=1;
+ if(!S.settings)S.settings={sound:true,read:true};
+ if(!S.pin)S.pin='1234';
+ if(!S.order)S.order=[];
+ if(!S.profiles)S.profiles={};
+ Object.values(S.profiles).forEach(q=>{if(!q.seen)q.seen={};if(!q.up)q.up=Date.now();});
+ if(!S.cloud)S.cloud=null;
+}
+function newProfile(name,avatar,theme,grade){
+ return {id:uuid(), name:name||'モコ', avatar:avatar||'🦖', theme:theme||'adventure',
+  grade:grade||'g34', lock:null,
+  level:LITE?1:(GRADES[grade]||GRADES.g34).start,   // ライトは全員Lv1(§7)
+  stages:{}, coins:0, coinsDate:'', coinsToday:0, coinCap:null, collection:{},
+  placed:false, seen:{}, up:Date.now()};   // up: プロフィール最終更新(同期マージ判定用)
+}
+function curP(){return S.cur?S.profiles[S.cur]:null;}
+/* ずかんの1体分の獲得数。実データは {n:count} 形式(旧・数値も許容)。
+   同期・パスポートのクラウド行には数値で書く(パスポート仕様§2.5・まなびと同形式)。 */
+function colN(v){return typeof v==='number'?v:((v&&v.n)||0);}
+/* かぞくのからくり塔(骨格§6): 家族合算のクリア数+ぴったり数から導出。
+   保存しない=同期マージが正しい限り塔は常に正しい(壊れようがない)。 */
+function towerStats(){
+ let clears=0,pits=0;
+ S.order.forEach(id=>{const q=S.profiles[id];
+  Object.values(q.stages||{}).forEach(x=>{if(x.clear)clears++;if(x.pit)pits++;});});
+ const points=clears+pits;
+ const dan=Math.min(10, Math.floor(points/12)+1);
+ const next=dan<10 ? (dan*12)-points : 0;   // つぎの だんまでの残りポイント
+ return {clears,pits,points,dan,next};
+}
+/* 🔁解禁は level>=3 から導出(保存しない・二重管理しない) */
+function repUnlockedFor(p){return p && p.level>=3;}
+
+/* ===== コイン(1日上限・effCap思想) ===== */
+function coinCapOf(p){return p.coinCap==null?60:p.coinCap;}  // null=60。0以下は「せいげんなし」表現用に -1 を使う
+function isUnlimited(p){return p.coinCap===-1;}
+function addCoins(p,n){
+ const t=today();
+ if(p.coinsDate!==t){p.coinsDate=t;p.coinsToday=0;}
+ let give=n;
+ if(!isUnlimited(p)){
+  const room=Math.max(0, coinCapOf(p)-p.coinsToday);
+  give=Math.min(n,room);
+ }
+ p.coins+=give; p.coinsToday+=give;
+ return give;
+}
+</script>
+<style>
+:root{
+  --night:#141B36; --navy:#1D2950; --card:#22305F; --line:#34417C;
+  --gold:#FFC94D; --goldD:#C99413; --leaf:#3FB27A; --leaf2:#5ECB93;
+  --coral:#FF6F5E; --moon:#FFF3C4; --ink:#F2F5FF; --mut:#9BA6CF;
+  --bg:#141B36; --sea:#1C3E6B; --seaD:#16305A; --gnd:#3B8465; --gndA:#3F8C6B; --gndD:#2F6B52;
+  --sand:#7A6A45;
+}
+/* きせかえテーマ: 海も島も空も変数駆動なので、テーマでまるごと塗り替わる */
+body[data-theme="ocean"]{--bg:#EAF6FB;--navy:#DCEFF8;--card:#FFFFFF;--line:#C8E3F0;
+  --ink:#1E3A4C;--mut:#5F8296;--moon:#1E3A4C;
+  --sea:#3FA9DA;--seaD:#2F8FC0;--gnd:#E8D296;--gndA:#F0DCA6;--gndD:#D9C07E;--sand:#C4A960;
+  background-image:none}
+body[data-theme="pastel"]{--bg:#FFF3F7;--navy:#FCE4EE;--card:#FFFFFF;--line:#F2CFE0;
+  --ink:#4A3B4E;--mut:#A08698;--moon:#4A3B4E;
+  --sea:#F4B8D0;--seaD:#E9A5C2;--gnd:#C89BE0;--gndA:#D2A9E8;--gndD:#B285CE;--sand:#E8C9E0;
+  background-image:none}
+body[data-theme="forest"]{--bg:#EDF6EA;--navy:#DFEEDC;--card:#FFFFFF;--line:#CDE2CC;
+  --ink:#2B4030;--mut:#6E8873;--moon:#2B4030;
+  --sea:#8FD0C0;--seaD:#79C2B0;--gnd:#6FBE7E;--gndA:#7BC98A;--gndD:#57A968;--sand:#D8C68A;
+  background-image:none}
+body[data-theme="sunset"]{--bg:#FFF1E4;--navy:#FFE6D2;--card:#FFFBF6;--line:#F4D6C4;
+  --ink:#4A2C3A;--mut:#A5788A;--moon:#4A2C3A;
+  --sea:#6E6BB8;--seaD:#5B58A5;--gnd:#8E6B9E;--gndA:#9A78AA;--gndD:#7A588A;--sand:#D9B088;
+  background-image:none}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{touch-action:manipulation}
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+.pal,.blk,.btn,.chip,button,[data-tog],[data-done],[data-del],[data-strip]{
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+html{font-size:16px}
+body{
+  font-family:"Zen Maru Gothic",sans-serif;background:var(--bg);color:var(--ink);
+  min-height:100vh;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 8%,#fff8 0,transparent 100%),
+    radial-gradient(1px 1px at 62% 4%,#fff6 0,transparent 100%),
+    radial-gradient(1.5px 1.5px at 86% 12%,#fff7 0,transparent 100%);
+  background-repeat:no-repeat;background-size:100% 480px;
+}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 28px}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.top h1{font-family:"Mochiy Pop One";font-weight:400;font-size:1.05rem;color:var(--moon)}
+.top .proto{font-size:.6rem;font-weight:900;color:var(--night);background:var(--gold);
+  border-radius:999px;padding:2px 9px}
+.top .sp{flex:1}
+.top .stg{font-size:.72rem;font-weight:900;color:var(--mut);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:inherit;
+  max-width:150px;cursor:pointer}
+
+/* ---------- goal line ---------- */
+.goal{display:flex;align-items:center;gap:10px;background:var(--card);
+  border:2px solid var(--line);border-radius:14px;padding:8px 14px;margin-bottom:10px;
+  font-size:.82rem;font-weight:700}
+.goal .gm{width:30px;height:30px;flex:none}
+.goal b{color:var(--gold)}
+
+/* ---------- board ---------- */
+.boardWrap{background:linear-gradient(180deg,var(--sea),var(--seaD));
+  border:2px solid var(--line);border-radius:20px;padding:16px;position:relative;
+  box-shadow:inset 0 4px 18px rgba(0,0,0,.3)}
+.boardWrap .wave{position:absolute;left:14px;right:14px;bottom:8px;height:6px;opacity:.4;
+  background:repeating-linear-gradient(90deg,transparent 0 14px,#2E5A93 14px 34px);
+  border-radius:3px}
+.board{position:relative;margin:0 auto;
+  /* サイズはJSで設定 */
+}
+.cell{position:absolute;border-radius:16%;
+  display:grid;place-items:center;font-size:1.2rem;
+  transition:transform .12s}
+.cell.g{background:var(--gnd);box-shadow:inset 0 -5px 0 var(--gndD),0 7px 0 var(--sand)}
+.cell.g.alt{background:var(--gndA)}
+.cell.r{background:var(--gnd);box-shadow:inset 0 -5px 0 var(--gndD),0 7px 0 var(--sand)}
+.cell.r::after{content:"🪨";font-size:1.35em;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}
+/* うみマスは描かない: 盤外もマスも同じ「水」として一続きに見せる(エンジンの扱いと一致) */
+.wv{position:absolute;height:3px;border-radius:3px;background:rgba(255,255,255,.4);
+  animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(3px);opacity:.75}}
+.cell.f::after{content:"🌼";font-size:1.05em}
+.cell.c::after{content:"";position:absolute;inset:0}
+.chest{position:absolute;display:grid;place-items:center;pointer-events:none;
+  transition:transform .3s}
+.chest svg{width:74%;height:74%;filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+.chest.open{animation:chestPop .5s ease}
+@keyframes chestPop{0%{transform:scale(1)}40%{transform:scale(1.3) rotate(-6deg)}100%{transform:scale(1.1)}}
+
+#moko{position:absolute;pointer-events:none;z-index:5;
+  transition:left .34s cubic-bezier(.34,1.3,.6,1), top .34s cubic-bezier(.34,1.3,.6,1)}
+#moko svg{width:100%;height:100%;filter:drop-shadow(0 4px 4px rgba(0,0,0,.4))}
+#moko.hop{animation:hop .34s ease}
+@keyframes hop{0%,100%{transform:translateY(0)}50%{transform:translateY(-26%)}}
+#moko.bump{animation:bump .45s ease}
+@keyframes bump{0%,100%{transform:translateX(0)}25%{transform:translateX(-9%)}55%{transform:translateX(7%)}80%{transform:translateX(-4%)}}
+#moko.splash{animation:splash .7s ease forwards}
+@keyframes splash{0%{transform:translateY(0);opacity:1}60%{transform:translateY(45%) scale(.9);opacity:1}100%{transform:translateY(80%) scale(.7);opacity:0}}
+#moko.cheer{animation:cheer .55s ease 2}
+@keyframes cheer{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22%) rotate(-7deg)}}
+.fx.lap{color:var(--gold);font-weight:900;text-shadow:0 0 6px rgba(255,201,77,.5)}
+.fx{position:absolute;z-index:6;font-family:"Mochiy Pop One";font-weight:400;
+  color:var(--moon);text-shadow:0 2px 0 rgba(0,0,0,.4);font-size:1rem;
+  animation:fxUp .8s ease forwards;pointer-events:none;white-space:nowrap}
+@keyframes fxUp{0%{opacity:0;transform:translateY(6px)}20%{opacity:1}100%{opacity:0;transform:translateY(-22px)}}
+
+/* ---------- program strip ---------- */
+.progCard{background:var(--card);border:2px solid var(--line);border-radius:18px;
+  padding:12px 14px;margin-top:12px}
+.progHd{display:flex;align-items:center;font-size:.72rem;font-weight:900;color:var(--mut);
+  margin-bottom:8px;gap:8px}
+.progHd .cnt{margin-left:auto;color:var(--ink)}
+.progHd .cnt b{color:var(--gold)}
+.strip{display:flex;flex-wrap:wrap;gap:7px;min-height:52px;align-items:center;
+  background:var(--navy);border:2px dashed var(--line);border-radius:12px;padding:8px}
+.strip:empty::after{content:"したの やじるしを タップして ならべてね";
+  color:var(--mut);font-size:.72rem;font-weight:700;padding:6px 8px}
+.blk{width:44px;height:44px;border-radius:12px;border:none;cursor:pointer;
+  font-size:1.3rem;font-weight:900;color:var(--night);
+  background:linear-gradient(180deg,#FFD97A,var(--gold));
+  box-shadow:0 3px 0 var(--goldD);position:relative;font-family:inherit;
+  transition:transform .1s}
+.blk:active{transform:translateY(2px);box-shadow:0 1px 0 var(--goldD)}
+.blk.run{outline:3px solid var(--moon);outline-offset:2px}
+.blk.used{opacity:.35;box-shadow:none;transform:translateY(2px)}
+@keyframes popIn{0%{transform:scale(.4)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+.blk.new{animation:popIn .22s ease}
+
+/* ---------- palette ---------- */
+/* くりかえしコンテナ */
+.rep{display:inline-flex;align-items:center;gap:5px;padding:4px 5px 4px 4px;border-radius:14px;
+  background:rgba(94,203,147,.14);border:2px solid var(--leaf);position:relative}
+.rep.open{border-style:dashed;border-color:var(--moon);
+  box-shadow:0 0 0 3px rgba(255,243,196,.18);animation:repOpen 1.4s ease-in-out infinite}
+@keyframes repOpen{0%,100%{box-shadow:0 0 0 3px rgba(255,243,196,.14)}50%{box-shadow:0 0 0 5px rgba(255,243,196,.3)}}
+.rep.run{outline:3px solid var(--moon);outline-offset:2px}
+.repN{border:none;border-radius:9px;cursor:pointer;font-family:inherit;font-weight:900;
+  font-size:.78rem;padding:6px 8px;color:var(--night);
+  background:linear-gradient(180deg,#8FE0B4,var(--leaf2));box-shadow:0 2px 0 #2E8A5E}
+.repN:active{transform:translateY(1px);box-shadow:none}
+.repBody{display:inline-flex;gap:5px;align-items:center;min-height:44px}
+.repEmpty{font-size:.66rem;font-weight:900;color:var(--mut);padding:0 8px;white-space:nowrap}
+.repX{border:none;background:transparent;color:var(--mut);font-size:.8rem;font-weight:900;
+  cursor:pointer;padding:2px 4px;font-family:inherit}
+.repDone{border:none;border-radius:10px;cursor:pointer;font-family:inherit;font-weight:900;
+  font-size:.7rem;padding:8px 10px;color:var(--night);white-space:nowrap;
+  background:linear-gradient(180deg,#FFF3C4,var(--moon));box-shadow:0 2px 0 #C9B77A}
+.repDone:active{transform:translateY(1px);box-shadow:none}
+/* 次のブロックが入る場所(点滅カーソル) */
+.caret{display:inline-block;width:4px;height:34px;border-radius:2px;background:var(--moon);
+  animation:caretBlink 1s step-end infinite;flex:none}
+@keyframes caretBlink{0%,100%{opacity:1}50%{opacity:.15}}
+.repX:active{transform:translateY(1px)}
+.repLoop{position:absolute;top:-9px;right:26px;background:var(--moon);color:var(--night);
+  font-size:.6rem;font-weight:900;border-radius:999px;padding:1px 7px;white-space:nowrap}
+.pal.rep{background:linear-gradient(180deg,#B8E6FF,#7BA5FF);box-shadow:0 4px 0 #4C74C4}
+.pal.cond{background:linear-gradient(180deg,#FFD4A8,#FF9E5E);box-shadow:0 4px 0 #C9702C}
+.rep.cond{border-color:var(--coral)}
+.rep.cond.open{border-color:var(--moon)}
+.condN{background:linear-gradient(180deg,#FFC98A,#FF9E5E)!important;box-shadow:0 2px 0 #C9702C;
+  color:var(--night);cursor:default}
+.btn.ghost.small.on{background:rgba(255,201,77,.18);border-color:var(--gold);color:var(--gold)}
+.cfIn{width:100%;padding:9px 11px;border:2px solid var(--line);border-radius:10px;font-family:inherit;font-size:.85rem;box-sizing:border-box}
+/* ⭐わざ */
+.pal.star{background:linear-gradient(180deg,#FFE08A,#FFC94D);box-shadow:0 4px 0 var(--goldD)}
+.blk.star{background:linear-gradient(180deg,#FFE08A,#FFC94D);color:var(--night);
+  box-shadow:0 3px 0 var(--goldD);font-size:1.2rem}
+.blk.star.calling{animation:pulse .5s infinite;outline:3px solid var(--moon)}
+[hidden]{display:none!important}
+.wazaWrap{max-width:560px;margin:8px auto 0;padding:0 14px;display:flex;flex-direction:column;gap:8px}
+.wazaRow{background:rgba(255,201,77,.08);border:2px solid var(--line);border-radius:14px;padding:8px 10px}
+.wazaHd{display:block;width:100%;text-align:left;background:transparent;border:none;
+  font-family:inherit;font-weight:900;font-size:.82rem;color:var(--gold);cursor:pointer;
+  padding:2px 4px 6px;border-radius:8px}
+.wazaHd.on{background:rgba(255,201,77,.18)}
+.strip.waza{min-height:44px;background:rgba(0,0,0,.12)}
+.strip.active{outline:2px solid var(--gold);outline-offset:1px}
+.strip.waza.active{outline-color:var(--gold)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.palette{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.pal{width:60px;height:60px;border-radius:16px;border:none;cursor:pointer;
+  font-size:1.7rem;font-weight:900;color:var(--night);font-family:inherit;
+  background:linear-gradient(180deg,#8FE0B4,var(--leaf2));
+  box-shadow:0 4px 0 #2E8A5E;transition:transform .1s}
+.pal:active{transform:translateY(3px);box-shadow:0 1px 0 #2E8A5E}
+.pal:disabled{opacity:.4}
+.actions{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.btn{border:none;border-radius:999px;cursor:pointer;font-family:inherit;font-weight:900;
+  padding:13px 26px;font-size:1rem;color:var(--night);
+  background:linear-gradient(180deg,#FFD97A,var(--gold));box-shadow:0 4px 0 var(--goldD);
+  transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--goldD)}
+.btn:disabled{opacity:.45}
+.btn.ghost{background:transparent;color:var(--mut);box-shadow:none;
+  border:2px solid var(--line);font-size:.85rem;padding:11px 18px}
+
+/* ---------- message / result ---------- */
+.msg{text-align:center;margin-top:12px;font-size:.85rem;font-weight:900;min-height:1.6em;
+  color:var(--moon)}
+.msg.ng{color:#FFB3AA}
+.overlay{position:fixed;inset:0;background:rgba(10,14,30,.75);display:grid;
+  place-items:center;z-index:50;padding:20px}
+.rcard{background:var(--card);border:3px solid var(--gold);border-radius:22px;
+  padding:26px 30px;text-align:center;max-width:340px;width:100%;
+  box-shadow:0 8px 0 rgba(0,0,0,.3);animation:popIn .3s ease}
+.rcard h2{font-family:"Mochiy Pop One";font-weight:400;color:var(--moon);font-size:1.4rem;
+  margin-bottom:6px}
+.rcard .stars{font-size:1.9rem;letter-spacing:.1em;margin:6px 0}
+.rcard .pit{display:inline-block;background:rgba(255,201,77,.15);border:2px solid var(--gold);
+  border-radius:999px;color:var(--gold);font-weight:900;font-size:.8rem;padding:5px 16px;
+  margin:4px 0 10px}
+.rcard .pit.kara{background:rgba(94,203,147,.15);border-color:var(--leaf2);color:var(--leaf2);
+  display:block;margin:4px auto 6px;max-width:fit-content}
+.goal .gr{color:var(--leaf2)}
+.rcard .sub{color:var(--mut);font-size:.78rem;margin-bottom:14px}
+.ft{position:absolute;border-radius:50%;background:var(--moon);opacity:.4;pointer-events:none;z-index:3}
+.ghostA{position:absolute;z-index:4;pointer-events:none;font-size:1.1rem;opacity:.75;
+  animation:ghostPulse 1.1s ease-in-out infinite;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+@keyframes ghostPulse{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.9;transform:scale(1.05)}}
+.cell.glow{outline:3px solid var(--moon);outline-offset:-2px;transition:outline-color .3s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* ===== 骨格レイヤー CSS ===== */
+.screen{min-height:100vh}
+.hero{text-align:center;padding:28px 0 10px}
+.hero h1{font-family:"Mochiy Pop One";font-weight:400;font-size:1.4rem;color:var(--moon)}
+.mut{color:var(--mut)} .sm{font-size:.72rem} .mut.sm{font-size:.72rem}
+.small{font-size:.8rem!important;padding:8px 14px!important}
+.sp{flex:1}
+/* プロフィール */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+.pcard{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px 12px;
+  cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:5px;
+  transition:transform .1s}
+.pcard:active{transform:scale(.97)}
+.pcard.add{border-style:dashed;opacity:.85} .pcard.locked{opacity:.5;cursor:default}
+.pav{font-size:2.4rem} .pnm{font-weight:900;color:var(--ink)} .pmeta{font-size:.72rem;color:var(--mut)}
+.pfoot{text-align:center;margin-top:8px}
+.regsec{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.reglbl{font-size:.78rem;font-weight:900;color:var(--mut);margin-bottom:8px}
+.reginput{width:100%;background:var(--navy);border:2px solid var(--line);border-radius:12px;
+  padding:12px;font-family:inherit;font-size:1.1rem;color:var(--ink);text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--navy);border:2px solid var(--line);border-radius:12px;padding:10px 12px;
+  cursor:pointer;font-family:inherit;font-size:1.3rem;color:var(--ink)}
+.chip.wide{font-size:.82rem;font-weight:900}
+.chip.on{border-color:var(--gold);background:rgba(255,201,77,.15)}
+/* マップ */
+.maptop{display:flex;align-items:center;gap:8px;padding:10px 0}
+.coinPill{background:var(--card);border:2px solid var(--gold);border-radius:999px;padding:4px 14px;
+  font-weight:900;color:var(--gold);font-size:.85rem}
+.lvtabs{display:flex;gap:6px;overflow-x:auto;padding:6px 0;margin-bottom:8px}
+.lvtab{flex:none;background:var(--card);border:2px solid var(--line);border-radius:999px;
+  padding:7px 15px;font-family:inherit;font-weight:900;font-size:.8rem;color:var(--mut);cursor:pointer}
+.lvtab.on{border-color:var(--gold);color:var(--gold);background:rgba(255,201,77,.12)}
+.lvtab.lk{opacity:.4}
+.nodes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
+.node{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 12px;
+  min-height:92px;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;position:relative;transition:transform .1s}
+.node:active{transform:scale(.97)}
+.node.soon{opacity:.45;cursor:default} .node.lite{opacity:.5}
+.nid{position:absolute;top:8px;left:10px;font-size:.62rem;font-weight:900;color:var(--mut)}
+.nname{font-weight:900;color:var(--ink);font-size:.92rem;text-align:center}
+.nstars{font-size:1rem} .nstars.dim{opacity:.3} .nlk{font-size:1.4rem}
+.endday{text-align:center;padding:8px 0 30px}
+.btn.end{background:linear-gradient(180deg,#3D4E8F,#2C3A6E);color:var(--moon);box-shadow:0 4px 0 #1D2950}
+/* PIN */
+.pindots{display:flex;gap:14px;justify-content:center;margin:20px 0}
+.pdot{width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid var(--line)}
+.pdot.on{background:var(--gold);border-color:var(--gold)}
+.pinpad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:280px;margin:0 auto}
+.pinkey{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px;
+  font-family:inherit;font-size:1.3rem;font-weight:900;color:var(--ink);cursor:pointer}
+.pinkey.ghost{background:transparent;color:var(--mut)} .pinkey:active{transform:scale(.95)}
+/* 親メニュー */
+.psec{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.tog{display:flex;align-items:center;gap:8px;font-weight:900;color:var(--ink);margin:6px 0;cursor:pointer}
+.tog input{width:18px;height:18px;accent-color:var(--leaf)}
+.iobox{width:100%;height:64px;margin-top:8px;background:var(--navy);border:2px solid var(--line);
+  border-radius:10px;padding:8px;font-family:monospace;font-size:.7rem;color:var(--ink);resize:vertical}
+.prow{display:flex;align-items:center;justify-content:space-between;padding:6px 0;font-weight:700}
+/* モーダル追加分 */
+.lkul{margin:0;padding-left:0;list-style:none}
+.lkul li{position:relative;padding-left:16px;margin-bottom:7px;font-size:.82rem;line-height:1.7}
+.lkul li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+".coinGot{color:var(--gold);font-weight:900;margin:8px 0}
+.lvupBadge{width:72px;height:72px;margin:0 auto 6px;border-radius:50%;
+  background:linear-gradient(180deg,#FFD97A,var(--gold));box-shadow:0 4px 0 var(--goldD);
+  display:grid;place-items:center;font-family:"Mochiy Pop One";font-weight:400;
+  font-size:1.5rem;color:var(--night);animation:popIn .45s ease}
+.unlockIcon{font-size:3.2rem;margin-bottom:4px;animation:popIn .5s ease}
+.unlockBody{background:var(--navy);border:2px solid var(--line);border-radius:14px;
+  padding:14px 16px;text-align:left}
+.unlockBody p{font-size:.9rem;font-weight:700;line-height:1.7;margin:0 0 8px;color:var(--ink)}
+.unlockBody p:last-child{margin-bottom:0}
+.reviewNote{background:rgba(255,201,77,.14);border:2px solid var(--gold);border-radius:12px;
+  padding:10px 12px;margin-top:12px;font-size:.82rem;font-weight:700;line-height:1.6;color:var(--moon)}
+.summary{margin:10px 0}
+.srow{display:flex;justify-content:space-between;padding:5px 4px;border-bottom:1px solid var(--line);font-weight:700}
+.srow b{color:var(--gold)}
+.hometop{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.homeGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px;margin:0 auto 18px}
+.homeCard{display:flex;flex-direction:column;align-items:center;gap:4px;padding:18px 10px 14px;
+  background:var(--card);border:2px solid var(--line);border-radius:18px;cursor:pointer;
+  font-family:inherit;color:var(--ink)}
+.homeCard:active{transform:translateY(1px)}
+.homeCard.wide{flex-direction:row;justify-content:center;gap:10px;max-width:480px;margin:0 auto 18px;padding:14px}
+.homeCard.wide .hIcon{font-size:1.5rem}
+.homeCard.wide .hName{font-size:1rem}
+.psec.dim{opacity:.7}
+.ppRow{display:flex;align-items:center;gap:8px;padding:7px 4px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.ppRow:last-child{border-bottom:none}
+.ppAva{font-size:1.3rem}
+.ppName{font-weight:900;font-size:.9rem}
+.ppLv{font-size:.75rem;color:var(--gold);font-weight:900}
+.ppStat{font-size:.72rem;color:var(--mut);margin-left:auto}
+.ppHere{font-size:.68rem;color:var(--leaf2);background:rgba(126,217,87,.12);padding:1px 6px;border-radius:6px}
+.ppsub{font-weight:900;font-size:.82rem;margin:8px 0 4px;color:var(--ink)}
+.ppChars{display:flex;flex-wrap:wrap;gap:4px}
+.ppChar{font-size:1.2rem;width:1.8em;height:1.8em;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--card);border:1px solid var(--line);border-radius:8px}
+.ppChar.lk{opacity:.3}
+.hIcon{font-size:2rem}
+.hName{font-weight:900;font-size:.92rem}
+.hSub{font-size:.72rem;color:var(--mut)}
+.chip.lk{opacity:.45}
+.towerCard{display:block;width:100%;max-width:420px;margin:0 auto 14px;background:rgba(255,201,77,.12);
+  border:2px solid var(--gold);border-radius:14px;padding:10px 12px;font-family:inherit;font-weight:900;
+  font-size:.9rem;color:var(--gold);cursor:pointer}
+.towerCard b{font-size:1.15rem}
+.towerViz{display:flex;flex-direction:column-reverse;align-items:center;gap:2px;margin:10px 0 0}
+.tFloor{background:linear-gradient(180deg,#5A4A6E,#463858);border:2px solid var(--gold);border-radius:6px;
+  text-align:center;font-size:.85rem;padding:1px 0}
+.tGround{width:88%;height:8px;background:linear-gradient(180deg,#6B5C42,#4A3F2E);border-radius:4px;margin-top:2px}
+.tower{background:rgba(255,201,77,.12);border:2px solid var(--gold);border-radius:12px;padding:8px;
+  font-weight:900;color:var(--gold);margin-top:8px}
+.tower b{font-size:1.2rem}
+.zgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.zcell{background:var(--navy);border:2px solid var(--line);border-radius:12px;aspect-ratio:1;
+  display:grid;place-items:center;font-size:1.6rem;position:relative}
+.zcell.got{border-color:var(--gold)} .zn{position:absolute;bottom:2px;right:4px;font-size:.6rem;font-weight:900;color:var(--gold)}
+.toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%);z-index:99;
+  background:var(--card);border:2px solid var(--gold);border-radius:999px;padding:10px 20px;
+  font-weight:900;color:var(--moon);font-size:.82rem;box-shadow:0 4px 12px rgba(0,0,0,.4);
+  animation:fxUp .3s ease;max-width:90%;text-align:center}
+
+</style>
+</head>
+<body>
+<!-- ===== 画面: プロフィール選択 ===== -->
+<div class="screen" id="scr-profiles"></div>
+
+<!-- ===== 画面: ホーム ===== -->
+<div class="screen" id="scr-home" hidden></div>
+
+<!-- ===== 画面: パスポート ===== -->
+<div class="screen" id="scr-passport" hidden></div>
+<!-- ===== 画面: ステージマップ ===== -->
+<div class="screen" id="scr-map" hidden></div>
+<!-- ===== 画面: 親メニュー ===== -->
+<div class="screen" id="scr-parent" hidden></div>
+<!-- ===== 画面: プレイ ===== -->
+<div class="screen" id="scr-play" hidden>
+<div class="wrap">
+  <div class="top">
+    <button class="btn ghost small" id="btnBackMap">◀ マップ</button>
+    <span class="sp"></span><span class="stg" id="stgLabel"></span>
+  </div>
+  <div class="goal" id="goalLine"></div>
+  <div class="boardWrap">
+    <div class="board" id="board"></div>
+    <div class="wave"></div>
+  </div>
+  <div class="progCard">
+    <div class="progHd">⚙️ からくりの じゅんばん
+      <span class="cnt" id="cnt"></span></div>
+    <div class="strip main" id="strip" data-strip="main"></div>
+  </div>
+  <div class="wazaWrap" id="wazaWrap" hidden>
+    <div class="wazaRow">
+      <button class="wazaHd" id="wazaHd1" data-strip="s1">⭐ きんの わざ</button>
+      <div class="strip waza" id="stripS1" data-strip="s1"></div>
+    </div>
+    <div class="wazaRow" id="wazaRow2" hidden>
+      <button class="wazaHd" id="wazaHd2" data-strip="s2">🌟 ぎんの わざ</button>
+      <div class="strip waza" id="stripS2" data-strip="s2"></div>
+    </div>
+  </div>
+  <div class="palette" id="palette"></div>
+  <div class="actions">
+    <button class="btn ghost small" id="btnFast" hidden>⏩ はやおくり</button>
+    <button class="btn ghost" id="btnUndo">⌫ ひとつ けす</button>
+    <button class="btn ghost" id="btnClear">ぜんぶ けす</button>
+    <button class="btn" id="btnRun">▶ うごかす</button>
+  </div>
+  <div class="msg" id="msg"></div>
+</div>
+</div><!-- /scr-play -->
+<div id="ovl"></div>
+
+<script>
+/* ================= 純粋エンジン(ヘッドレステスト対象) =================
+   盤面: 文字グリッド。 g=じめん a=じめん(市松) r=いわ s=うみ f=はな
+   start:[x,y] chest:[x,y]。プログラムは 'U','D','L','R' の配列。 */
+const STAGES=[
+ // ===== Lv1: やじるしを ならべる ===== (全面BFS検証済み)
+ {id:'1-1',lv:1,name:'はじめの いっぽ',par:1,hint:'➡️を 1こ おして「うごかす」',
+  grid:['s s s s','s g g s','s s s s'],start:[1,1],chest:[2,1]},
+ {id:'1-2',lv:1,name:'まっすぐ すすめ',par:2,hint:'➡️を 2こ ならべよう',
+  grid:['s s s s s','s g g g s','s s s s s'],start:[1,1],chest:[3,1]},
+ {id:'1-3',lv:1,name:'かどを まがる',par:2,hint:'したに いってから みぎ',
+  grid:['s s s s','s g s s','s g g s','s s s s'],start:[1,1],chest:[2,2]},
+ {id:'1-4',lv:1,name:'たてに おりる',par:3,parR:2,hint:'⬇️を 3こ',
+  grid:['s s s','s g s','s g s','s g s','s g s','s s s'],start:[1,1],chest:[1,4]},
+ {id:'1-5',lv:1,name:'エルじの みち',par:3,hint:'みぎ みぎ、それから した',
+  grid:['s s s s s','s g g g s','s s s g s','s s s s s'],start:[1,1],chest:[3,2]},
+ {id:'1-6',lv:1,name:'ジグザグ',par:4,parR:3,hint:'みぎ した みぎ した',
+  grid:['s s s s s s','s g g s s s','s s g g s s','s s s g s s','s s s s s s'],start:[1,1],chest:[3,3]},
+ {id:'1-7',lv:1,name:'かいだんを のぼる',par:4,parR:3,hint:'みぎと うえを こうごに',
+  grid:['s s s s s','s s s g s','s s g g s','s g g s s','s s s s s'],start:[1,3],chest:[3,1]},
+ {id:'1-8',lv:1,name:'とおまわりの はし',par:4,hint:'まっすぐは うみ。したから ぐるっと',
+  grid:['s s s s s','s g s g s','s g g g s','s s s s s'],start:[1,1],chest:[3,1]},
+ // ===== Lv2: しょうがいぶつ =====
+ {id:'2-1',lv:2,name:'いわに ちゅうい',par:4,hint:'いわの したを とおろう',
+  grid:['s s s s s','s g r g s','s g g g s','s s s s s'],start:[1,1],chest:[3,1]},
+ {id:'2-2',lv:2,name:'うみの ほそみち',par:4,hint:'みちの とおりに すすもう',
+  grid:['s s s s s s','s g g s s s','s s g s s s','s s g g s s','s s s s s s'],start:[1,1],chest:[3,3]},
+ {id:'2-3',lv:2,name:'いわの ろうか',par:5,parR:3,hint:'うえの みちを まっすぐ',
+  grid:['s s s s s s s','s g g g g g s','s g r r r g s','s g g g g g s','s s s s s s s'],start:[1,1],chest:[5,2]},
+ {id:'2-4',lv:2,name:'ジグザグばし',par:5,parR:4,hint:'はしから おちないように 1こずつ',
+  grid:['s s s s s s','s g g s s s','s s g g s s','s s s g s s','s s s g g s','s s s s s s'],start:[1,1],chest:[3,4]},
+ {id:'2-5',lv:2,name:'はなの こみち',par:5,parR:3,hint:'はなの みちを とおって みぎへ',
+  grid:['s s s s s s s','s g g f g g s','s s s s s g s','s s s s s s s'],start:[1,1],chest:[5,2]},
+ {id:'2-6',lv:2,name:'いわの にわ',par:6,parR:4,hint:'うえからでも したからでも いけるよ',
+  grid:['s s s s s s s','s g g g s s s','s g r g g s s','s g r r g s s','s g g g g s s','s s s s s s s'],start:[1,1],chest:[4,4]},
+ {id:'2-7',lv:2,name:'Uターンの しま',par:6,hint:'おくまで いってから ひだりに もどるよ',
+  grid:['s s s s s','s g g g s','s s s g s','s g g g s','s s s s s'],start:[1,1],chest:[1,3]},
+ {id:'2-8',lv:2,name:'うみを ぐるっと',par:6,parR:4,hint:'うみの まわりを ぐるっと まわろう',
+  grid:['s s s s s s s','s g g g g g s','s g s s s g s','s g s f s g s','s g g g g g s','s s s s s s s'],start:[1,1],chest:[4,4]},
+ // ===== Lv3: くりかえしの はっけん ===== (minBlocks両空間証明済み)
+ {id:'3-1',lv:3,name:'ろっぽの みち',par:3,hint:'➡️6こでも クリアできるよ。🔁を つかうと…?',
+  grid:['s s s s s s s s s','s g g g g g g g s','s s s s s s s s s'],start:[1,1],chest:[7,1]},
+ {id:'3-2',lv:3,name:'くりかえし かいだん',par:3,hint:'「みぎ した」を なんかい くりかえす?',
+  grid:['s s s s s s','s g g s s s','s s g g s s','s s s g g s','s s s s g s','s s s s s s'],start:[1,1],chest:[4,4]},
+ {id:'3-3',lv:3,name:'ながい ジグザグ',par:3,hint:'さっきと おなじ カタチ。かいすうだけ かえてみよう',
+  grid:['s s s s s s s','s g g s s s s','s s g g s s s','s s s g g s s','s s s s g g s','s s s s s g s','s s s s s s s'],start:[1,1],chest:[5,5]},
+ {id:'3-4',lv:3,name:'ふたつの くりかえし',par:4,hint:'🔁を 2つ つかっても いいんだよ',
+  grid:['s s s s s s s','s g g g g g s','s s s s s g s','s s s s s g s','s s s s s g s','s s s s s g s','s s s s s s s'],start:[1,1],chest:[5,5]},
+ {id:'3-5',lv:3,name:'おおきな かいだん',par:4,hint:'ひとつの だんは「みぎ みぎ した」',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s f g g s s s','s s s s s f g g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chest:[7,4]},
+ {id:'3-6',lv:3,name:'ろうかの さきへ',par:4,hint:'ながい ろうかの あとに、ひとつだけ おまけ',
+  grid:['s s s s s s s s s s s','s g g g g g g g g g s','s s s s s s s s s g s','s s s s s s s s s s s'],start:[1,1],chest:[9,2]},
+ {id:'3-7',lv:3,name:'かいだんの さき',par:5,hint:'かいだんの あと、もう いっぽ したへ',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s g g g s s s','s s s s s g g g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chest:[7,5]},
+ {id:'3-8',lv:3,name:'たきを くだって',par:5,hint:'たきは「した した みぎ」、さいごに みぎへ いっぽ',
+  grid:['s s s s s s s','s g s s s s s','s g s s s s s','s g f s s s s','s s g s s s s','s s g f s s s','s s s g s s s','s s s g g g s','s s s s s s s'],start:[1,1],chest:[5,7]},
+ // ===== Lv4: ながい くりかえしと ふたつの たからばこ =====
+ {id:'4-1',lv:4,name:'ふたつの たからばこ',par:5,hint:'たからばこは ふたつ! とおりみちで ひろおう',
+  grid:['s s s s s s s s','s g g g g g s s','s s s s s g s s','s s s s s g s s','s s s s s g s s','s s s s s g g s','s s s s s s s s'],start:[1,1],chests:[[5,1],[6,5]]},
+ {id:'4-2',lv:4,name:'とちゅうで ひろって',par:5,hint:'くりかえしの とちゅうでも、たからばこは ひらくよ',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s g g g s s s','s s s s s g g g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chests:[[5,3],[7,5]]},
+ {id:'4-3',lv:4,name:'どっちから とる?',par:5,hint:'ひだりが さき? みぎが さき? すきな ほうで いいよ',
+  grid:['s s s s s s s s s s s','s g g g g g g g g g s','s s s s s s s s s s s'],start:[5,1],chests:[[1,1],[9,1]]},
+ {id:'4-4',lv:4,name:'しかくの みち',par:6,hint:'ぐるっと まわって 2つとも あつめよう',
+  grid:['s s s s s s','s g g g g s','s g s s g s','s g s s g s','s g g g g s','s s s s s s'],start:[1,1],chests:[[4,1],[1,4]]},
+ {id:'4-5',lv:4,name:'かいだんと おまけ',par:6,hint:'かいだんの あと、ふたつ おりるよ',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s g g g s s s','s s s s s g g g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chests:[[5,3],[7,6]]},
+ {id:'4-6',lv:4,name:'はいりきらない みち',par:6,hint:'ブロックが たりない!? 🔁の でばんだ!',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s g s s s s s','s s s g g g s s s','s s s s s g s s s','s s s s s g g g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chests:[[5,5],[7,8]]},
+ {id:'4-7',lv:4,name:'ながい ながい たび',par:7,hint:'みっつの ながい みちと、さいごの いっぽ',
+  grid:['s s s s s s s s s s s','s g g g g g s s s s s','s s s s s g s s s s s','s s s s s g s s s s s','s s s s s g s s s s s','s s s s s g g g g g s','s s s s s s s s s g s','s s s s s s s s s s s'],start:[1,1],chests:[[5,1],[9,6]]},
+ {id:'4-8',lv:4,name:'だいぼうけんの みち',par:7,hint:'いちばん ながい たび。🔁で みじかく できるかな',
+  grid:['s s s s s s s s s','s g g g s s s s s','s s s g s s s s s','s s s f g g s s s','s s s s s g s s s','s s s s s g g g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s g s','s s s s s s s s s'],start:[1,1],chests:[[5,5],[7,9]]},
+  // ===== Lv5: もし❓(向き多様・混合で❓有効) =====
+ {id:'5-1',lv:5,name:'はなで もぐる',par:3,hint:'はなの マスで だけ したに もぐれるよ。❓の あとに ブロックを いれてね',
+  grid:['s s s s s s','s g f f g s','s s g g s s','s s s s s s'],start:[1,1],chests:[[2,2],[3,2]]},
+ {id:'5-2',lv:5,name:'はなを くりかえす',par:4,hint:'🔁の なかに ❓を いれると、はなの ときだけ もぐるを くりかえせる!',
+  grid:['s s s s s s s','s g f f f g s','s s g g g s s','s s s s s s s'],start:[1,1],chests:[[2,2],[3,2],[4,2]]},
+ {id:'5-3',lv:5,name:'うえの はな',par:4,hint:'こんどは はなで うえに のびる!',
+  grid:['s s s s s s s','s s g g g s s','s g f f f g s','s s s s s s s'],start:[1,2],chests:[[2,1],[3,1],[4,1]]},
+ {id:'5-4',lv:5,name:'よこの はな',par:4,hint:'したに すすんで、はなで よこに もぐる',
+  grid:['s s s s','s g s s','s f g s','s f g s','s f g s','s g s s','s s s s'],start:[1,1],chests:[[2,2],[2,3],[2,4]]},
+ {id:'5-5',lv:5,name:'よこの ぼうけん',par:5,hint:'よこの はなを ❓と🔁で ぜんぶ!',
+  grid:['s s s s','s g s s','s f g s','s g s s','s f g s','s f g s','s f g s','s g s s','s s s s'],start:[1,1],chests:[[2,2],[2,4],[2,5],[2,6]]},
+ {id:'5-6',lv:5,name:'とびとびの はな',par:7,hint:'はなが とびとび。はなじゃない マスは そのまま すすむよ',
+  grid:['s s s s s s s s s s','s g f f g f g f g s','s s g g s g s g s s','s s s s s s s s s s'],start:[1,1],chests:[[2,2],[3,2],[5,2],[7,2]]},
+ {id:'5-7',lv:5,name:'うえの ぼうけん',par:7,hint:'うえの はなが とびとび! ❓なら みじかく まわれる',
+  grid:['s s s s s s s s s s','s s g s g g s g s s','s g f g f f g f g s','s s s s s s s s s s'],start:[1,2],chests:[[2,1],[4,1],[5,1],[7,1]]},
+ {id:'5-8',lv:5,name:'はなの だいぼうけん',par:9,hint:'はなを ぜんぶ まわろう。❓と🔁で みじかく',
+  grid:['s s s s s s s s s s s s','s g f g f f g f g f g s','s s g s g g s g s g s s','s s s s s s s s s s s s'],start:[1,1],chests:[[2,2],[4,2],[5,2],[7,2],[9,2]]},
+ // ===== Lv6: 入れ子(maxBlocksで強制・5系統) =====
+ {id:'6-1',lv:6,name:'にじゅうの かいだん',par:4,hint:'🔁の なかに 🔁を いれられるよ(Lv6から!)「みぎ3・した」を くりかえす',maxBlocks:4,
+  grid:['s s s s s s s s s s s s','s g g g g s s s s s s s','s s s s g g g g s s s s','s s s s s s s g g g g s','s s s s s s s s s s g s','s s s s s s s s s s s s'],start:[1,1],chest:[10,4]},
+ {id:'6-2',lv:6,name:'たての かいだん',par:4,hint:'こんどは たて!「みぎ・した3かい」を くりかえす',maxBlocks:4,
+  grid:['s s s s s s','s g g s s s','s s g s s s','s s g s s s','s s g g s s','s s s g s s','s s s g s s','s s s g g s','s s s s g s','s s s s g s','s s s s g s','s s s s s s'],start:[1,1],chest:[4,10]},
+ {id:'6-3',lv:6,name:'ながい かいだん',par:4,hint:'だんが ふえたよ。かいすうを ふやそう',maxBlocks:4,
+  grid:['s s s s s s s s s s s s s s s','s g g g g s s s s s s s s s s','s s s s g g g g s s s s s s s','s s s s s s s g g g g s s s s','s s s s s s s s s s g g g g s','s s s s s s s s s s s s s g s','s s s s s s s s s s s s s s s'],start:[1,1],chest:[13,5]},
+ {id:'6-4',lv:6,name:'おおまた かいだん',par:4,hint:'「みぎ4・した」を くりかえす',maxBlocks:4,
+  grid:['s s s s s s s s s s s s s s s','s g g g g g s s s s s s s s s','s s s s s g g g g g s s s s s','s s s s s s s s s g g g g g s','s s s s s s s s s s s s s g s','s s s s s s s s s s s s s s s'],start:[1,1],chest:[13,4]},
+ {id:'6-5',lv:6,name:'ますめ もよう',par:5,hint:'「みぎ3・した2」の かたまりを くりかえす',maxBlocks:5,
+  grid:['s s s s s s s s s s s s','s g g g g s s s s s s s','s s s s g s s s s s s s','s s s s g g g g s s s s','s s s s s s s g s s s s','s s s s s s s g g g g s','s s s s s s s s s s g s','s s s s s s s s s s g s','s s s s s s s s s s s s'],start:[1,1],chest:[10,7]},
+ {id:'6-6',lv:6,name:'たての おおまた',par:4,hint:'「みぎ・した4」を くりかえす',maxBlocks:4,
+  grid:['s s s s s s','s g g s s s','s s g s s s','s s g s s s','s s g s s s','s s g g s s','s s s g s s','s s s g s s','s s s g s s','s s s g g s','s s s s g s','s s s s g s','s s s s g s','s s s s g s','s s s s s s'],start:[1,1],chest:[4,13]},
+ {id:'6-7',lv:6,name:'おおきな ますめ',par:5,hint:'おおきな「みぎ4・した2」を くりかえす',maxBlocks:5,
+  grid:['s s s s s s s s s s s s s s s','s g g g g g s s s s s s s s s','s s s s s g s s s s s s s s s','s s s s s g g g g g s s s s s','s s s s s s s s s g s s s s s','s s s s s s s s s g g g g g s','s s s s s s s s s s s s s g s','s s s s s s s s s s s s s g s','s s s s s s s s s s s s s s s'],start:[1,1],chest:[13,7]},
+ {id:'6-8',lv:6,name:'にじゅうの だいぼうけん',par:4,hint:'いちばん おおきな かいだん。🔁の なかの 🔁で みじかく',maxBlocks:4,
+  grid:['s s s s s s s s s s s s s s s s s s s s s s s','s g g g g g g s s s s s s s s s s s s s s s s','s s s s s s g g g g g g s s s s s s s s s s s','s s s s s s s s s s s g g g g g g s s s s s s','s s s s s s s s s s s s s s s s g g g g g g s','s s s s s s s s s s s s s s s s s s s s s g s','s s s s s s s s s s s s s s s s s s s s s s s'],start:[1,1],chest:[21,5]},
+  // ===== Lv7: わざ⭐(教える面先頭) =====
+ {id:'7-1',lv:7,name:'わざを つくろう',par:11,hint:'⭐わざに「みぎ・した・した・うえ・うえ」を いれて、⭐を 3かい つかおう!',maxBlocks:11,
+  grid:['s s s s s s s s s s','s g g g g g g g g s','s s g s g s s g s s','s s g s g s s g s s','s s s s s s s s s s'],start:[1,1],chests:[[2,3],[4,3],[7,3]]},
+ {id:'7-2',lv:7,name:'はなの わざ',par:9,hint:'わざの なかに ❓を いれてみよう!「すすんで、はなだったら もぐる」',maxBlocks:9,
+  grid:['s s s s s s s s s s','s g f g f g g f g s','s s g s g s s g s s','s s g s g s s g s s','s s s s s s s s s s'],start:[1,1],chests:[[2,3],[4,3],[7,3]]},
+ {id:'7-3',lv:7,name:'はなの だいぼうけん',par:10,hint:'はなの ばしょが かわっても、おなじ わざで だいじょうぶ!',maxBlocks:10,
+  grid:['s s s s s s s s s s s s','s g f g g g f g g f g s','s s g s s s g s s g s s','s s g s s s g s s g s s','s s s s s s s s s s s s'],start:[1,1],chests:[[2,3],[6,3],[9,3]]},
+ {id:'7-4',lv:7,name:'うえに のぼって',par:11,hint:'こんどは うえに のぼる わざ!',maxBlocks:11,
+  grid:['s s s s s s s s s s','s s g s g s s g s s','s s g s g s s g s s','s g g g g g g g g s','s s s s s s s s s s'],start:[1,3],chests:[[2,1],[4,1],[7,1]]},
+ {id:'7-5',lv:7,name:'よこあなの しま',par:11,hint:'よこに ほる わざも つくれるよ',maxBlocks:11,
+  grid:['s s s s s','s g s s s','s g g g s','s g s s s','s g g g s','s g s s s','s g s s s','s g g g s','s g s s s','s s s s s'],start:[1,1],chests:[[3,2],[3,4],[3,7]]},
+ {id:'7-6',lv:7,name:'ふかい たから',par:11,hint:'ふかい あなは、わざの なかで 🔁を つかうと みじかい!',maxBlocks:11,
+  grid:['s s s s s s s s s s','s g g g g g g g g s','s s g s s g s g s s','s s g s s g s g s s','s s g s s g s g s s','s s s s s s s s s s'],start:[1,1],chests:[[2,4],[5,4],[7,4]]},
+ {id:'7-7',lv:7,name:'とびとびの たから',par:12,hint:'とびとびでも おなじ わざで とれるよ',maxBlocks:12,
+  grid:['s s s s s s s s s s s s','s g g g g g g g g g g s','s s g s s g s s s g s s','s s g s s g s s s g s s','s s s s s s s s s s s s'],start:[1,1],chests:[[2,3],[5,3],[9,3]]},
+ {id:'7-8',lv:7,name:'よっつの たから',par:14,hint:'たからが 4つ! わざなら へっちゃら',maxBlocks:14,
+  grid:['s s s s s s s s s s s s s','s g g g g g g g g g g g s','s s g s s g s g s s g s s','s s g s s g s g s s g s s','s s s s s s s s s s s s s'],start:[1,1],chests:[[2,3],[5,3],[7,3],[10,3]]},
+ // ===== Lv8: わざ2本🌟(卒業制作末尾) =====
+ {id:'8-1',lv:8,name:'ふたつの わざ',par:17,hint:'あさい あなは ⭐、ふかい あなは 🌟。ふたつの わざを つくろう!',maxBlocks:17,
+  grid:['s s s s s s s s s s s s s s s','s g g g g g g g g g g g g g s','s s g s s g s s g s s g s s s','s s g s s g s s g s s g s s s','s s s s s g s s s s s g s s s','s s s s s s s s s s s s s s s'],start:[1,1],chests:[[2,3],[5,4],[8,3],[11,4]]},
+ {id:'8-2',lv:8,name:'むっつの たから',par:15,hint:'ふかい・あさいの じゅんばんに きをつけて!',maxBlocks:15,
+  grid:['s s s s s s s s s s s s s s s','s g g g g g g g g g g g g g s','s s g s g s g s g s g s g s s','s s g s g s g s g s g s g s s','s s g s s s g s s s g s s s s','s s s s s s s s s s s s s s s'],start:[1,1],chests:[[2,4],[4,3],[6,4],[8,3],[10,4],[12,3]]},
+ {id:'8-3',lv:8,name:'よこあなの ふかさ',par:15,hint:'よこあなにも あさい・ふかいが あるよ',maxBlocks:15,
+  grid:['s s s s s s','s g s s s s','s g g g s s','s g s s s s','s g g g g s','s g s s s s','s g g g s s','s g s s s s','s g g g g s','s g s s s s','s s s s s s'],start:[1,1],chests:[[3,2],[4,4],[3,6],[4,8]]},
+ {id:'8-4',lv:8,name:'のぼりの ふかさ',par:15,hint:'たかい やまと ひくい やま!',maxBlocks:15,
+  grid:['s s s s s s s s s s s','s s s s g s s s g s s','s s g s g s g s g s s','s s g s g s g s g s s','s g g g g g g g g g s','s s s s s s s s s s s'],start:[1,4],chests:[[2,2],[4,1],[6,2],[8,1]]},
+ {id:'8-5',lv:8,name:'のぼって もぐって',par:16,hint:'うえは ⭐、したは 🌟!',maxBlocks:16,
+  grid:['s s s s s s s s s s s s s','s s s s s s s s s s s s s','s s g s s s g s s s g s s','s s g s s s g s s s g s s','s g g g g g g g g g g g s','s s s s g s s s g s s s s','s s s s g s s s g s s s s','s s s s g s s s g s s s s'],start:[1,4],chests:[[2,2],[4,7],[6,2],[8,7],[10,2]]},
+ {id:'8-6',lv:8,name:'おおきな しま',par:16,hint:'たから 5つ! ⭐と 🌟の こうたい!',maxBlocks:16,
+  grid:['s s s s s s s s s s s s s','s g g g g g g g g g g g s','s s g s g s g s g s g s s','s s g s g s g s g s g s s','s s s s g s s s g s s s s','s s s s s s s s s s s s s'],start:[1,1],chests:[[2,3],[4,4],[6,3],[8,4],[10,3]]},
+ {id:'8-7',lv:8,name:'ふかい あさい',par:17,hint:'ふかい あなが さきの ばん!',maxBlocks:17,
+  grid:['s s s s s s s s s s s s s s','s g g g g g g g g g g g g s','s s g s s g s s g s s g s s','s s g s s g s s g s s g s s','s s g s s s s s g s s s s s','s s s s s s s s s s s s s s'],start:[1,1],chests:[[2,4],[5,3],[8,4],[11,3]]},
+ {id:'8-8',lv:8,name:'そつぎょう せいさく',par:15,hint:'いままでの ぜんぶを つかった そつぎょうせいさく! がんばれ!',maxBlocks:15,
+  grid:['s s s s s s s s s s s s s s s','s s s s s s s s s s s s s s s','s s g s s s g s s s g s s s s','s s g s s s g s s s g s s s s','s g g g g g g g g g g g g g s','s s s s g s s s g s s s g s s','s s s s g s s s g s s s g s s','s s s s g s s s g s s s g s s'],start:[1,4],chests:[[2,2],[4,7],[6,2],[8,7],[10,2],[12,7]]},];
+const DIRS={U:[0,-1],D:[0,1],L:[-1,0],R:[1,0]};
+function parseStage(st){
+ const rows=st.grid.map(r=>r.split(' '));
+ return {w:rows[0].length,h:rows.length,rows:rows,start:st.start,chest:st.chest,par:st.par};
+}
+function tileAt(p,x,y){
+ if(x<0||y<0||x>=p.w||y>=p.h)return 's';           // 盤の外=うみ扱い
+ return p.rows[y][x];
+}
+/* 1手すすめる。結果: {x,y,ev} ev: ''=ok 'rock'=ごっつん(元の位置のまま) 'sea'=ぽちゃん(落ちた位置) */
+function stepPos(p,x,y,dir){
+ const d=DIRS[dir];const nx=x+d[0],ny=y+d[1];
+ const t=tileAt(p,nx,ny);
+ if(t==='r')return {x:x,y:y,ev:'rock'};
+ if(t==='s')return {x:nx,y:ny,ev:'sea'};
+ return {x:nx,y:ny,ev:''};
+}
+/* プログラム全体を実行。{ok,reason,path:[{x,y,ev}...],usedAll} */
+/* ===== 第2波: プログラムはAST =====
+   例: ['R', {r:3, body:['R','U']}, 'D']
+   矢印は文字列、くりかえしは {r:回数, body:[...]}。入れ子はLv6まで作らない。 */
+const MAX_STEPS=40;   // 展開後の総手数の安全弁(将来の入れ子解禁への保険)
+
+/* 展開: ASTを平坦な手の列にする。上限超過は over:true で返す */
+function expand(prog){
+ const out=[];let over=false;
+ const walk=(list)=>{
+  for(const b of list){
+   if(over)return;
+   if(typeof b==='string'){
+    out.push(b);
+    if(out.length>MAX_STEPS){over=true;return;}
+   }else if(b&&b.body){
+    const n=b.r||2;
+    for(let i=0;i<n;i++){walk(b.body);if(over)return;}
+   }
+  }
+ };
+ walk(prog);
+ return {steps:out,over:over};
+}
+/* ブロック数: 矢印=1、くりかえし=1+中身(回数は数えない) */
+function blockCount(prog){
+ let n=0;
+ for(const b of prog){
+  if(typeof b==='string')n++;
+  else if(b&&b.call)n++;                       // ⭐呼び出し=1こ
+  else if(b&&b.body)n+=1+blockCount(b.body);   // 🔁も❓も コンテナ=1+中身
+ }
+ return n;
+}
+/* わざの定義コスト: main と 全コンテナの中で「実際に呼ばれた」わざだけ、
+   定義のブロック数を1回ずつ加算する(par仕様§3)。 */
+function usedSkills(prog,acc){
+ acc=acc||{};
+ for(const b of prog){
+  if(b&&b.call)acc[b.call]=true;
+  else if(b&&b.body)usedSkills(b.body,acc);
+ }
+ return acc;
+}
+function totalBlocks(prog,skills){
+ let n=blockCount(prog);
+ if(skills){
+  const used=usedSkills(prog);
+  for(const k in used){ if(skills[k])n+=blockCount(skills[k]); }
+ }
+ return n;
+}
+/* からっぽのコンテナ(🔁または❓)を含むか(エラーにせず一言だけ出すため) */
+function hasEmptyContainer(prog){
+ for(const b of prog){
+  if(b&&b.body){ if(!b.body.length)return true; if(hasEmptyContainer(b.body))return true; }
+ }
+ return false;
+}
+const hasEmptyRepeat=hasEmptyContainer;   // 後方互換の別名
+/* 宝箱の一覧(chests優先・chestは後方互換) */
+function chestList(st){
+ if(st.chests&&st.chests.length)return st.chests.map(c=>c.slice());
+ return [st.chest.slice()];
+}
+/* 実行: 木の上を歩く逐次インタープリタ(第3波)。
+   ❓もしブロックは「いまモコが立つマスが花か」で分岐するため、事前平坦化(expand)
+   では扱えない。木を歩きながら1手ずつ評価する。
+   戻り値の形(ok/reason/path/blocks/used/extra/got)は第2波と完全互換。
+   条件種別: if:'flower' … 現在マスが 'f'(はな)なら body を実行 */
+function isFlower(p,x,y){ return tileAt(p,x,y)==='f'; }
+function simulate(st,prog,skills){
+ const p=parseStage(st);
+ const blocks=totalBlocks(prog,skills);
+ // 面ごとのブロック上限(Lv6以降の技術強制。未指定は制限なし)
+ if(st.maxBlocks && blocks>st.maxBlocks)
+  return {ok:false,reason:'toomany',path:[{x:st.start[0],y:st.start[1],ev:'',got:null}],blocks:blocks};
+ const chests=chestList(st);
+ const got={};
+ let x=p.start[0],y=p.start[1];
+ const path=[{x:x,y:y,ev:'',got:null}];
+ const hit=(cx,cy)=>chests.findIndex(c=>c[0]===cx&&c[1]===cy);
+ let k0=hit(x,y); if(k0>=0)got[k0]=1;
+ let steps=0;                 // 実行した総手数(MAX_STEPS 安全弁)
+ let usedTop=0;               // 消費したトップレベル手数(extra算出の互換用)
+ const state={done:false, res:null};
+
+ // 1手すすめる。宝箱回収・障害・クリア・手数上限を判定し、state.res を立てたら true を返す(停止)
+ function doMove(dir,isTop){
+  const r=stepPos(p,x,y,dir);
+  const node={x:r.x,y:r.y,ev:r.ev,got:null};
+  if(lapStack.length){const t=lapStack[lapStack.length-1];node.lap={cur:t.cur,total:t.total};}
+  path.push(node);
+  steps++;
+  if(isTop)usedTop++;
+  if(r.ev==='rock'){state.res={ok:false,reason:'rock',path:path,at:steps-1,blocks:blocks};return true;}
+  if(r.ev==='sea'){state.res={ok:false,reason:'sea',path:path,at:steps-1,blocks:blocks};return true;}
+  x=r.x;y=r.y;
+  const k=hit(x,y);
+  if(k>=0&&!got[k]){got[k]=1;node.got=k;}
+  if(Object.keys(got).length===chests.length){
+   state.res={ok:true,reason:'clear',path:path,used:usedTop,blocks:blocks,
+              extra:0};    // extra は下で確定(トップレベル残数)
+   state.clearAtTop=isTop; return true;
+  }
+  if(steps>=MAX_STEPS){state.res={ok:false,reason:'toolong',path:path,blocks:blocks};return true;}
+  return false;
+ }
+ // リストを順に実行。isTop=トップレベルか(extra算出用)。停止したら true
+ let callDepth=0;
+ const lapStack=[];   // いま回っている🔁の {cur,total}(最内が末尾)
+ function runList(list,isTop){
+  for(let i=0;i<list.length;i++){
+   const b=list[i];
+   if(typeof b==='string'){ if(doMove(b,isTop))return true; }
+   else if(b&&b.if){        // ❓もしブロック
+    if(isFlower(p,x,y)){ if(runList(b.body,false))return true; }
+   }
+   else if(b&&b.call){      // ⭐わざ呼び出し
+    const body=skills&&skills[b.call];
+    if(body&&body.length&&callDepth<8){    // わざ内⭐は仕様で禁止だが安全弁も
+     callDepth++;
+     const stop=runList(body,false);
+     callDepth--;
+     if(stop)return true;
+    }
+    // からっぽのわざ / 未定義 はスキップ(🔁・❓と同じ流儀)
+   }
+   else if(b&&b.body){      // 🔁くりかえし
+    const n=b.r||2;
+    for(let r=0;r<n;r++){
+     lapStack.push({cur:r+1,total:n});
+     const stop=runList(b.body,false);
+     lapStack.pop();
+     if(stop)return true;
+    }
+   }
+  }
+  return false;
+ }
+ runList(prog,true);
+ if(state.res){
+  // クリア時の extra = トップレベルで まだ実行していない手数(第2波の意味に合わせる)
+  if(state.res.ok){
+   // トップレベルのうち、クリアまでに消費した「ブロック個数」を数え直す
+   let topUsed=0, stopped=false;
+   const countTop=(list)=>{
+    for(const b of list){
+     if(stopped)return;
+     if(typeof b==='string'){topUsed++; if(topUsed>=state.res.used){stopped=true;return;}}
+     else {topUsed++; if(topUsed>=state.res.used){stopped=true;return;}}
+    }
+   };
+   // used はトップレベルの「手数」ベースなので、extra はトップ手数-used ではなく
+   // トップレベルのブロックを実行しきる前に終わった残りを概算(アニメ用途のみ)
+   state.res.extra=0;
+  }
+  return state.res;
+ }
+ return {ok:false,reason:'short',path:path,blocks:blocks};
+}
+/* 最短経路(ヒント用): 未回収の最寄り宝箱への最短路 */
+function bfsPath(st,from,targets){
+ const p=parseStage(st);
+ const start=from||p.start;
+ const goals=targets||chestList(st);
+ const key=(x,y)=>x+','+y;
+ const prev={};const q=[[start[0],start[1]]];prev[key(start[0],start[1])]=null;
+ while(q.length){
+  const [x,y]=q.shift();
+  if(goals.some(g=>g[0]===x&&g[1]===y)){
+   const dirs=[];let k=key(x,y);
+   while(prev[k]){dirs.unshift(prev[k].d);k=prev[k].k;}
+   return dirs;
+  }
+  for(const d of Object.keys(DIRS)){
+   const r=stepPos(p,x,y,d);
+   if(r.ev)continue;
+   const nk=key(r.x,r.y);
+   if(prev[nk]===undefined){prev[nk]={k:key(x,y),d:d};q.push([r.x,r.y]);}
+  }
+ }
+ return [];
+}
+/* 全宝箱を回る最短手数(順序自由・宝箱は少数前提の全順列) */
+function solvable(st){
+ const chests=chestList(st);
+ const perms=(a)=>a.length<=1?[a]:a.flatMap((v,i)=>perms([...a.slice(0,i),...a.slice(i+1)]).map(r=>[v,...r]));
+ let best=-1;
+ for(const order of perms(chests.map((_,i)=>i))){
+  let cur=st.start,total=0,ok=true;
+  for(const idx of order){
+   const d=bfsPath(st,cur,[chests[idx]]);
+   if(!d.length&&!(cur[0]===chests[idx][0]&&cur[1]===chests[idx][1])){ok=false;break;}
+   total+=d.length;cur=chests[idx];
+  }
+  if(ok&&(best<0||total<best))best=total;
+ }
+ return best;
+}
+
+/* ================= れんしゅうの原っぱ(karakuri-harappa-spec) =================
+   原則: 解パスを先に引き、あとから飾る。生成後 solvable() で機械検証。
+   自己ベスト表示のみ(parなし・賞なし)。進行・塔に影響しない。 */
+const HARA={stage:null,best:null,lastSig:''};
+function hrnd(n){return Math.floor(Math.random()*n);}
+function hpick(a){return a[hrnd(a.length)];}
+const HDIR={'R':[1,0],'L':[-1,0],'D':[0,1],'U':[0,-1]};
+const HPERP={'R':['D','U'],'L':['D','U'],'D':['R','L'],'U':['R','L']};
+/* 経路(moves)が自己交差しないか。cells も返す */
+function hwalk(moves){
+ let x=0,y=0;const cells=[[0,0]];const seen=new Set(['0,0']);
+ for(const m of moves){const d=HDIR[m];x+=d[0];y+=d[1];
+  const k=x+','+y;if(seen.has(k))return null;   // 自己交差
+  seen.add(k);cells.push([x,y]);}
+ return cells;
+}
+/* moves列 → ステージ(盤=バウンディングボックス+海1縁)。opts: chests,flowers,branches,rocks */
+function hboard(lv,moves,opts){
+ opts=opts||{};
+ const cells=hwalk(moves);
+ if(!cells)return null;
+ let all=cells.slice();
+ (opts.branchCells||[]).forEach(bc=>all=all.concat(bc));
+ const minx=Math.min(...all.map(c=>c[0])), miny=Math.min(...all.map(c=>c[1]));
+ const norm=(c)=>[c[0]-minx+1,c[1]-miny+1];
+ const land=new Map();   // "x,y" -> tile
+ all.forEach(c=>{const[nx,ny]=norm(c);land.set(nx+','+ny,'g');});
+ (opts.flowers||[]).forEach(c=>{const[nx,ny]=norm(c);land.set(nx+','+ny,'f');});
+ const w=Math.max(...all.map(c=>norm(c)[0]))+2, h=Math.max(...all.map(c=>norm(c)[1]))+2;
+ // 岩: 経路に隣接する海マスに置く(「よけた」体験)。経路上には置かない
+ const rocks=opts.rocks||0;
+ let placed=0,guard=0;
+ while(placed<rocks&&guard<40){
+  guard++;
+  const c=hpick(cells);const[nx,ny]=norm(c);
+  const dd=hpick(['R','L','D','U']);const d=HDIR[dd];
+  const rx=nx+d[0],ry=ny+d[1];
+  if(rx<1||ry<1||rx>=w-1||ry>=h-1)continue;
+  const k=rx+','+ry;
+  if(land.has(k))continue;
+  land.set(k,'r');placed++;
+ }
+ const grid=[];
+ for(let yy=0;yy<h;yy++){const row=[];
+  for(let xx=0;xx<w;xx++)row.push(land.get(xx+','+yy)||'s');
+  grid.push(row.join(' '));}
+ const st={id:'はらっぱ',lv:lv,name:'れんしゅうの はらっぱ',harappa:true,
+  hint:'じゆうに ためして あそぼう!',grid:grid,start:norm(cells[0])};
+ const chs=(opts.chests||[cells[cells.length-1]]).map(norm);
+ if(chs.length>1)st.chests=chs; else st.chest=chs[0];
+ st.sol=moves.slice();
+ return st;
+}
+/* ランダムなモチーフ(長さlen・後戻りなし) */
+function hmotif(len){
+ const out=[];let last=null;
+ for(let i=0;i<len;i++){
+  const opts=['R','D','R','D','U','L'].filter(m=>{
+   if(!last)return m==='R'||m==='D';       // 開始は右か下(盤が素直)
+   const opp={'R':'L','L':'R','D':'U','U':'D'};
+   return m!==opp[last];                    // 直前の逆=後戻り は禁止
+  });
+  const m=hpick(opts);out.push(m);last=m;
+ }
+ return out;
+}
+/* Lv別テンプレート(仕様§2) */
+function hgen(lv){
+ for(let tryN=0;tryN<30;tryN++){
+  let st=null;
+  if(lv===1){
+   // 直線+曲がり0〜2 / 2〜4手
+   const len=2+hrnd(3);
+   st=hboard(1,hmotif(len),{});
+  }else if(lv===2){
+   // 曲がり1〜3 / 4〜6手 / 岩1〜3
+   const len=4+hrnd(3);
+   const mv=hmotif(len);
+   st=hboard(2,mv,{rocks:1+hrnd(3)});
+  }else if(lv===3){
+   // モチーフ(1〜3手)×2〜4回+端数0〜1(過収束対策: 端数はループ次手と別向き)
+   const m=hmotif(1+hrnd(3)), rep=2+hrnd(3);
+   let mv=[];for(let i=0;i<rep;i++)mv=mv.concat(m);
+   if(hrnd(2)){const tail=hpick(HPERP[m[0]]);mv.push(tail);}
+   if(mv.length<6||mv.length>10)continue;   // 仕様§2: Lv3は6〜10手
+   st=hboard(3,mv,{rocks:hrnd(3)});
+  }else if(lv===4){
+   // Lv3型 8〜13手+宝箱2(中間+終点)
+   const m=hmotif(2+hrnd(2)), rep=3+hrnd(2);
+   let mv=[];for(let i=0;i<rep;i++)mv=mv.concat(m);
+   while(mv.length<8)mv.push(hpick(HPERP[mv[mv.length-1]]));
+   mv=mv.slice(0,13);
+   const cells=hwalk(mv);if(!cells)continue;
+   const mid=cells[Math.floor(cells.length/2)];
+   st=hboard(4,mv,{chests:[mid,cells[cells.length-1]],rocks:hrnd(4)});
+  }else if(lv===5){
+   // くし型: 本道R×(6〜10)+はな脇道1〜3本(各1〜2深)。宝箱は脇道の先(構造的に脇道必須)
+   const W=6+hrnd(5);
+   const nB=1+hrnd(3);
+   const xs=[];let guard=0;
+   while(xs.length<nB&&guard<20){guard++;const x=1+hrnd(W-1);
+    if(!xs.some(v=>Math.abs(v-x)<2))xs.push(x);}   // 隣接しすぎない
+   xs.sort((a,b)=>a-b);
+   const mvMain=[];for(let i=0;i<W;i++)mvMain.push('R');
+   // 解パス: 本道を進み、各はなで潜って戻る
+   const mv=[];const flowers=[];const branchCells=[];const chests=[];
+   let cx=0;
+   for(let x=1;x<=W;x++){
+    mv.push('R');cx=x;
+    if(xs.includes(x)){
+     const depth=1+hrnd(2);
+     flowers.push([x,0]);
+     const bc=[];for(let d=1;d<=depth;d++){mv.push('D');bc.push([x,d]);}
+     for(let d=depth;d>=1;d--)mv.push('U');
+     branchCells.push(bc);
+     chests.push([x,depth]);
+    }
+   }
+   // 本道セル(0,0)〜(W,0)。hwalkは往復で交差扱いになるので、盤は直接組む
+   const mainCells=[];for(let x=0;x<=W;x++)mainCells.push([x,0]);
+   let all=mainCells.slice();branchCells.forEach(bc=>all=all.concat(bc));
+   const land=new Map();
+   all.forEach(c=>land.set((c[0]+1)+','+(c[1]+1),'g'));
+   flowers.forEach(c=>land.set((c[0]+1)+','+(c[1]+1),'f'));
+   const w=W+3,h=3+Math.max(...chests.map(c=>c[1]));
+   const grid=[];
+   for(let yy=0;yy<h;yy++){const row=[];
+    for(let xx=0;xx<w;xx++)row.push(land.get(xx+','+yy)||'s');
+    grid.push(row.join(' '));}
+   st={id:'はらっぱ',lv:5,name:'れんしゅうの はらっぱ',harappa:true,
+    hint:'はなの マスで もぐって みよう',grid:grid,start:[1,1],
+    chests:chests.map(c=>[c[0]+1,c[1]+1]),sol:mv};
+  }else if(lv===6){
+   // 入れ子: 本編Lv6の5系統を還流(横階段/縦階段/大股/縦大股/桝)。〜20手
+   const fam=hrnd(5);
+   let aDir,aLen,bDir,bLen;
+   if(fam===0){aDir='R';aLen=2+hrnd(2);bDir='D';bLen=1;}        // 横階段 R×2-3+D
+   else if(fam===1){aDir='D';aLen=2+hrnd(2);bDir='R';bLen=1;}   // 縦階段 D×2-3+R
+   else if(fam===2){aDir='R';aLen=4+hrnd(2);bDir='D';bLen=1;}   // 大股 R×4-5+D
+   else if(fam===3){aDir='D';aLen=4+hrnd(2);bDir='R';bLen=1;}   // 縦大股 D×4-5+R
+   else {aDir='R';aLen=2+hrnd(3);bDir='D';bLen=2;}              // 桝 R×2-4+D×2
+   const k=2+hrnd(3);
+   const unit=[];for(let q=0;q<aLen;q++)unit.push(aDir);
+   for(let q=0;q<bLen;q++)unit.push(bDir);
+   let mv=[];for(let i=0;i<k;i++)mv=mv.concat(unit);
+   if(mv.length>20)continue;
+   st=hboard(6,mv,{rocks:hrnd(3)});
+  }else{
+   // Lv7〜8: モチーフ(2〜4手)×2〜3回+不規則接着1〜3手。宝箱2・岩0〜3・〜20手
+   const m=hmotif(2+hrnd(3)), rep=2+hrnd(2);
+   let mv=[];
+   for(let i=0;i<rep;i++){
+    mv=mv.concat(m);
+    if(i<rep-1){
+     const glueLen=1+hrnd(3);
+     for(let g=0;g<glueLen;g++)mv.push(hpick(HPERP[mv[mv.length-1]]||['D']));
+    }
+   }
+   if(mv.length>20)continue;
+   const cells=hwalk(mv);if(!cells)continue;
+   const mid=cells[Math.floor(cells.length/2)];
+   st=hboard(lv,mv,{chests:[mid,cells[cells.length-1]],rocks:hrnd(4)});
+  }
+  if(!st)continue;
+  // 盤サイズ上限(本編最大と同じ16×16。スマホで潰れない)
+  {const pp=parseStage(st);if(pp.w>16||pp.h>16)continue;}
+  // 同一構造の連続を避ける
+  const sig=lv+':'+st.sol.join('');
+  if(sig===HARA.lastSig)continue;
+  // 機械検証: 必ず解ける
+  if(solvable(st)<0)continue;
+  HARA.lastSig=sig;
+  return st;
+ }
+ // 上限到達: 絶対安全な直線にフォールバック(無限ループしない)
+ const st=hboard(lv,['R','R'],{});HARA.lastSig=lv+':RR';return st;
+}
+
+if(typeof module!=='undefined')module.exports={STAGES,DIRS,parseStage,stepPos,simulate,solvable,bfsPath,expand,blockCount,totalBlocks,usedSkills,hasEmptyRepeat,hasEmptyContainer,isFlower,chestList,MAX_STEPS,hgen,HARA};
+
+/* ================= UI(ブラウザのみ) ================= */
+if(typeof document!=='undefined'){
+const MAXBLK=12;
+let cur=0, prog=[], running=false, openC=null;  // openC: 編集中のコンテナ(🔁または❓)
+// 速い2連続タップの誤爆防止(iOSでdrawProg後のDOM再生成に2つ目のタップが当たる問題)
+let _lastTap=0;
+function tapLock(ms){const now=Date.now();if(now-_lastTap<(ms||90))return true;_lastTap=now;return false;}
+let fastOn=false;  // はやおくり(Lv6解禁)
+let skills={s1:[],s2:[]};   // ⭐わざの中身(Lv7〜)
+let activeStrip='main';     // 挿入先: 'main' | 's1' | 's2'
+/* 🔁の解禁。本番は「Lv3の最初の面に到達」で立てる(プロファイル単位)。
+   プロトタイプでは実機テスト用に切り替えられるようにしておく。 */
+/* repUnlocked はプロフィールから導出(repUnlockedFor)。グローバルは持たない */
+function repUnlocked(){const p=curP();return !!(p&&repUnlockedFor(p));}
+function ifUnlocked(){const p=curP();return !!(p&&p.level>=5);}    // ❓もし = Lv5
+function nestUnlocked(){const p=curP();return !!(p&&p.level>=6);}  // 🔁入れ子 = Lv6
+function fastUnlocked(){const p=curP();return !!(p&&p.level>=6);}  // 2倍速 = Lv6
+function wazaUnlocked(){const p=curP();return !!(p&&p.level>=7);}  // ⭐わざ = Lv7
+function waza2Unlocked(){const p=curP();return !!(p&&p.level>=8);} // 🌟2本目 = Lv8
+const $=id=>document.getElementById(id);
+
+const MOKO_SVG='<svg viewBox="0 0 60 60"><ellipse cx="30" cy="52" rx="16" ry="4" fill="#000" opacity=".25"/><ellipse cx="30" cy="31" rx="19" ry="20" fill="#5ECB93"/><ellipse cx="30" cy="34" rx="12.5" ry="12.5" fill="#CFF3DF"/><path d="M30 11c0-6 4-9.5 9-11.5-1 6-4 9.5-9 11.5z" fill="#3B8465"/><circle cx="24" cy="29" r="2.3" fill="#1E3A2C"/><circle cx="36" cy="29" r="2.3" fill="#1E3A2C"/><path d="M25.5 37c2.7 2.2 6.3 2.2 9 0" stroke="#1E3A2C" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="19" cy="33" r="2.4" fill="#FF9E8F" opacity=".7"/><circle cx="41" cy="33" r="2.4" fill="#FF9E8F" opacity=".7"/><ellipse cx="11" cy="27" rx="3.6" ry="6.5" fill="#5ECB93"/><ellipse cx="49" cy="27" rx="3.6" ry="6.5" fill="#5ECB93"/></svg>';
+const CHEST_CLOSED='<svg viewBox="0 0 40 34"><rect x="3" y="12" width="34" height="20" rx="6" fill="#B07A3C"/><path d="M3 17a17 12 0 0 1 34 0v2H3z" fill="#8F5F2C"/><rect x="3" y="16" width="34" height="4" fill="#7A4F23"/><rect x="16" y="14" width="8" height="10" rx="2.5" fill="#FFC94D"/></svg>';
+const CHEST_OPEN='<svg viewBox="0 0 40 34"><path d="M3 10a17 12 0 0 1 34 0l-3 2H6z" fill="#8F5F2C" transform="rotate(-14 20 10)"/><rect x="3" y="14" width="34" height="18" rx="6" fill="#B07A3C"/><circle cx="14" cy="16" r="3" fill="#FFC94D"/><circle cx="22" cy="13" r="2.4" fill="#FFE07A"/><circle cx="28" cy="16" r="2.8" fill="#FFC94D"/></svg>';
+const ARROWS={U:'⬆️',D:'⬇️',L:'⬅️',R:'➡️'};
+const CARET='<span class="caret"></span>';
+
+/* --- SFX (WebAudio 最小限) --- */
+let AC=null;
+function tone(f,d,type,vol){try{ if(typeof S!=='undefined'&&S&&S.settings&&!S.settings.sound)return;
+ AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+ const o=AC.createOscillator(),g=AC.createGain();
+ o.type=type||'sine';o.frequency.value=f;
+ g.gain.setValueAtTime(vol||.12,AC.currentTime);
+ g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+(d||.12));
+ o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+(d||.12));
+}catch(e){}}
+const SFX={
+ tap:()=>tone(660,.06,'triangle',.08),
+ del:()=>tone(330,.08,'triangle',.08),
+ step:()=>tone(520,.05,'sine',.06),
+ bump:()=>{tone(160,.18,'sawtooth',.12);},
+ splash:()=>{tone(500,.08,'sine',.1);setTimeout(()=>tone(300,.15,'sine',.1),80);},
+ clear:()=>{[660,830,990,1320].forEach((f,i)=>setTimeout(()=>tone(f,.16,'triangle',.12),i*110));},
+ gacha:()=>{[520,660,880].forEach((f,i)=>setTimeout(()=>tone(f,.12,'sine',.1),i*90));},
+ endday:()=>{[440,554,659,880].forEach((f,i)=>setTimeout(()=>tone(f,.3,'sine',.09),i*160));}
+};
+
+/* --- 盤面描画 --- */
+let P=null, cellPx=0;
+function drawStage(){
+ const st=STAGES[cur];P=parseStage(st);
+ {const lb=$('stgLabel');if(lb)lb.textContent=st.id+' ・ Lv'+st.lv;}
+ { // はやおくりボタン(Lv6解禁)
+  const fb=$('btnFast');
+  if(fb){ fb.hidden=!fastUnlocked(); fb.textContent=fastOn?'⏩ はやおくり ON':'⏩ はやおくり'; fb.classList.toggle('on',fastOn); }
+ }
+ palette();
+ const showR=repUnlocked()&&st.parR;
+ const capNote=st.maxBlocks?' <b class="gr">つかえるのは '+st.maxBlocks+'こまで</b>':'';
+ $('goalLine').innerHTML='<span class="gm">'+MOKO_SVG+'</span><span>'+st.name
+  +(st.harappa?' <b class="gr">じゆうに れんしゅう!</b>'
+    :' <b>ぴったり: '+st.par+'こ</b>'
+     +(showR?' <b class="gr">⚙️からくり: '+st.parR+'こ</b>':'')+capNote)+'</span>';
+ const bw=Math.min(window.innerWidth-60,420);
+ cellPx=Math.floor(bw/P.w);
+ const b=$('board');
+ b.style.width=(cellPx*P.w)+'px';b.style.height=(cellPx*P.h)+'px';
+ let h='';
+ for(let y=0;y<P.h;y++)for(let x=0;x<P.w;x++){
+  const t=P.rows[y][x];
+  if(t==='s'){
+   // 水面のさざなみ(決定的な散らし方: 同じステージなら同じ場所)
+   if((x*7+y*13)%3===0){
+    h+='<span class="wv" style="left:'+(x*cellPx+cellPx*0.3)+'px;top:'+(y*cellPx+cellPx*0.55)+'px;width:'+(cellPx*0.4)+'px;animation-delay:'+(((x+y)%4)*0.4)+'s"></span>';
+   }
+   continue;
+  }
+  const cls=(t==='r'?'r':((x+y)%2?'g alt':'g'))+(t==='f'?' f':'');
+  h+='<div class="cell '+cls+'" data-xy="'+x+','+y+'" style="left:'+(x*cellPx+2)+'px;top:'+(y*cellPx+2)+'px;width:'+(cellPx-4)+'px;height:'+(cellPx-4)+'px"></div>';
+ }
+ chestList(st).forEach((c,i)=>{
+  h+='<div class="chest" id="chest'+i+'" style="left:'+(c[0]*cellPx)+'px;top:'+(c[1]*cellPx)+'px;width:'+cellPx+'px;height:'+cellPx+'px">'+CHEST_CLOSED+'</div>';
+ });
+ h+='<div id="moko" style="left:'+(P.start[0]*cellPx)+'px;top:'+(P.start[1]*cellPx)+'px;width:'+cellPx+'px;height:'+cellPx+'px">'+MOKO_SVG+'</div>';
+ b.innerHTML=h;
+ prog=[];skills={s1:[],s2:[]};openC=null;activeStrip='main';drawProg();msg(st.hint);
+}
+function msg(t,ng){const m=$('msg');m.textContent=t||'';m.className='msg'+(ng?' ng':'');}
+/* リスト→ストリップDOM対応。パスは "main:0.1" のように接頭辞つき */
+function listFor(sid){return sid==='main'?prog:skills[sid];}
+function stripEl(sid){return sid==='main'?$('strip'):$('strip'+sid.toUpperCase());}
+function drawProg(){
+ // わざストリップの表示・展開
+ const ww=$('wazaWrap'); if(ww)ww.hidden=!wazaUnlocked();
+ const wr2=$('wazaRow2'); if(wr2)wr2.hidden=!waza2Unlocked();
+ // 各ストリップを描画
+ const strips=['main','s1','s2'];
+ for(const sid of strips){
+  const el=stripEl(sid); if(!el)continue;
+  const list=listFor(sid);
+  const isActive=(activeStrip===sid);
+  el.innerHTML=list.map((b,i)=>blkHtml(b,sid+':'+i)).join('')
+   +((isActive&&!openC)?CARET:'');
+  el.classList.toggle('active',isActive);
+  bindStripEvents(el);
+ }
+ // わざヘッダのアクティブ表示
+ ['s1','s2'].forEach(sid=>{const hd=$('wazaHd'+sid.charAt(1));if(hd)hd.classList.toggle('on',activeStrip===sid);});
+ const cap=(STAGES[cur]&&STAGES[cur].maxBlocks)||MAXBLK;
+ const n=totalBlocks(prog,skills);
+ $('cnt').innerHTML='<b>'+n+'</b> / '+cap+'こ';
+ $('btnRun').disabled=(prog.length===0)||running;
+ // パレットのコンテナ/わざボタン無効化
+ const rp=document.querySelector('.pal[data-d="REP"]');
+ const cp=document.querySelector('.pal[data-d="IF"]');
+ const sp=document.querySelector('.pal[data-d="STAR"]');
+ const sp2=document.querySelector('.pal[data-d="STAR2"]');
+ // ⭐/🌟は「挿入先がメイン側」のときだけ活性(開いたコンテナ優先で判定)
+ const starDest = openC ? stripOf(openC) : activeStrip;
+ // 🔁: 実行中 / ❓を開いている間 / (🔁の中の🔁でLv6未満) は不可
+ if(rp)rp.disabled=running || (openC && (openC.if || !nestUnlocked()));
+ if(cp)cp.disabled=running || (openC && openC.if);
+ if(sp)sp.disabled=running || starDest!=='main';
+ if(sp2)sp2.disabled=running || starDest!=='main';
+}
+/* 1本のストリップ要素にイベントを束ねる(メイン・わざ共通) */
+function bindStripEvents(s){
+ s.querySelectorAll('[data-del]').forEach(el=>{
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.del();clearAssist();delAt(el.dataset.del);drawProg();};
+ });
+ s.querySelectorAll('[data-cyc]').forEach(el=>{
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+   const b=nodeAt(el.dataset.cyc);b.r=b.r>=5?2:b.r+1;drawProg();};
+ });
+ s.querySelectorAll('[data-tog]').forEach(el=>{
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+   const b=nodeAt(el.dataset.tog);openC=(openC===b)?null:b;
+   activeStrip=splitPath(el.dataset.tog).sid;   // 触ったストリップに挿入先を追従
+   drawProg();
+   msg(openC?'🔁の なかに いれています。おわったら ✓ を おしてね':'');};
+ });
+ s.querySelectorAll('[data-done]').forEach(el=>{
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+   const parent=parentOf(el.dataset.done);
+   openC=parent||null;
+   activeStrip=splitPath(el.dataset.done).sid;
+   drawProg();
+   msg(openC?'🔁の なかを つづけて いれられるよ。おわったら ✓':'つぎの ブロックは うしろに はいるよ');};
+ });
+ // 余白タップ: そのストリップをアクティブにしつつ、開いているコンテナは閉じる
+ s.onclick=()=>{if(running)return;if(tapLock())return;const sid=s.dataset.strip;
+  if(openC){SFX.tap();openC=null;drawProg();msg('');return;}
+  if(activeStrip!==sid){SFX.tap();activeStrip=sid;drawProg();}};
+}
+/* パス("0" や "2.1")でASTのノードを取る/消す */
+/* ノードがどのストリップ(main/s1/s2)に属すか。再帰走査 */
+function stripOf(node){
+ function inList(list){
+  for(const b of list){
+   if(b===node)return true;
+   if(b&&b.body&&inList(b.body))return true;
+  }
+  return false;
+ }
+ for(const sid of ['main','s1','s2'])if(inList(listFor(sid)))return sid;
+ return null;
+}
+/* パスは "sid:i.j.k"。sid=main|s1|s2。接頭辞でリストを選び、残りでノードを辿る */
+function splitPath(path){
+ const c=path.indexOf(':');
+ if(c<0)return {sid:'main', ks:path.split('.').map(Number)};   // 後方互換(接頭辞なし=main)
+ return {sid:path.slice(0,c), ks:path.slice(c+1).split('.').map(Number)};
+}
+function nodeAt(path){
+ const {sid,ks}=splitPath(path);
+ let list=listFor(sid),node=null;
+ for(let i=0;i<ks.length;i++){node=list[ks[i]];if(i<ks.length-1)list=node.body;}
+ return node;
+}
+/* 親コンテナのノードを返す(そのストリップのトップレベル直下なら null) */
+function parentOf(path){
+ const {sid,ks}=splitPath(path);
+ if(ks.length<=1)return null;
+ return nodeAt(sid+':'+ks.slice(0,-1).join('.'));
+}
+function delAt(path){
+ const {sid,ks}=splitPath(path);
+ let list=listFor(sid);
+ for(let i=0;i<ks.length-1;i++)list=list[ks[i]].body;
+ const gone=list[ks[ks.length-1]];
+ if(gone===openC)openC=null;
+ list.splice(ks[ks.length-1],1);
+}
+function blkHtml(b,path){
+ if(typeof b==='string')
+  return '<button class="blk" data-del="'+path+'">'+ARROWS[b]+'</button>';
+ if(b&&b.call){
+  const icon=b.call==='s2'?'🌟':'⭐';
+  return '<button class="blk star" data-del="'+path+'" data-callref="'+b.call+'">'+icon+'</button>';
+ }
+ const open=(b===openC);
+ const isIf=!!b.if;
+ let h='<span class="rep'+(isIf?' cond':'')+(open?' open':'')+'" data-tog="'+path+'">';
+ h+= isIf
+   ? '<span class="repN condN">❓🌼</span>'                        // ❓は回数を持たない
+   : '<button class="repN" data-cyc="'+path+'">🔁×'+b.r+'</button>';
+ h+='<span class="repBody">';
+ h+=b.body.map((c,i)=>blkHtml(c,path+'.'+i)).join('');
+ if(!b.body.length)h+='<span class="repEmpty">'+(open?'やじるしを いれてね':(isIf?'はなの ときだけ':'からっぽ'))+'</span>';
+ if(open)h+=CARET;                                  // 次のブロックが入る場所
+ h+='</span>';
+ // 開いているあいだは「✓ とじる」を出す。枠(4px)はタップの的にならないため。
+ h+=open?'<button class="repDone" data-done="'+path+'">✓ とじる</button>'
+        :'<button class="repX" data-del="'+path+'">✕</button>';
+ h+='</span>';
+ return h;
+}
+function palette(){
+ $('palette').innerHTML=['U','L','D','R'].map(d=>'<button class="pal" data-d="'+d+'">'+ARROWS[d]+'</button>').join('')
+  +(repUnlocked()?'<button class="pal rep" data-d="REP" title="くりかえし">🔁</button>':'')
+  +(ifUnlocked()?'<button class="pal cond" data-d="IF" title="もし">❓</button>':'')
+  +(wazaUnlocked()?'<button class="pal star" data-d="STAR" title="わざ">⭐</button>':'')
+  +(waza2Unlocked()?'<button class="pal star" data-d="STAR2" title="ぎんのわざ">🌟</button>':'');
+ document.querySelectorAll('.pal').forEach(el=>{
+  el.onclick=()=>{
+   if(running)return;
+   if(tapLock())return;
+   const dd=el.dataset.d;
+   const cap=(STAGES[cur]&&STAGES[cur].maxBlocks)||MAXBLK;
+   if(totalBlocks(prog,skills)>=cap){
+    SFX.bump();
+    msg((STAGES[cur]&&STAGES[cur].maxBlocks)?'ここでは つかえる ブロックが すくないよ! もっと みじかく':
+        (repUnlocked()?'ブロックが たりない! 🔁の でばんだ!':'ブロックが いっぱいだよ'),true);
+    return;
+   }
+   // 追加先リスト: コンテナを開いていればその中、なければアクティブストリップ
+   const destList = openC ? openC.body : listFor(activeStrip);
+   if(dd==='STAR'||dd==='STAR2'){
+    // ⭐/🌟わざ呼び出し。挿入先(開いたコンテナ or アクティブストリップ)が
+    // メイン側のときだけ置ける(わざの中に わざ=再帰 を作らせない)。
+    const destStrip = openC ? stripOf(openC) : activeStrip;
+    if(destStrip!=='main'){ SFX.bump(); msg('わざの なかに わざは いれられないよ',true); return; }
+    destList.push({call: dd==='STAR2'?'s2':'s1'});
+    SFX.tap();clearAssist();drawProg();
+    return;
+   }
+   SFX.tap();clearAssist();
+   if(dd==='REP'||dd==='IF'){
+    if(openC){
+     if(openC.if){ return; }
+     if(dd==='REP'&&!nestUnlocked()){ return; }
+    }
+    const node = dd==='REP' ? {r:2,body:[]} : {if:'flower',body:[]};
+    destList.push(node);
+    openC=node;
+    msg(dd==='REP'?'🔁の なかに いれています。おわったら ✓ を おしてね'
+                  :'❓の なかに いれています。はなの マスで うごくよ。✓ で とじてね');
+   }else{
+    destList.push(dd);
+   }
+   drawProg();
+   const se=stripEl(activeStrip); const last=se&&se.lastElementChild;if(last)last.classList.add('new');
+  };
+ });
+}
+function fx(text,x,y,cls){
+ const b=$('board');
+ const e=document.createElement('div');e.className='fx'+(cls?' '+cls:'');e.textContent=text;
+ e.style.left=(x*cellPx-6)+'px';e.style.top=(y*cellPx-14)+'px';
+ b.appendChild(e);setTimeout(()=>e.remove(),850);
+}
+
+/* ================= 音声(まなびクエスト sayText を移植) ================= */
+const RE_EMOJI=/[\u{1F000}-\u{1FAFF}\u{2190}-\u{21FF}\u{2300}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu;
+function stripTags(t){return String(t).replace(/<br\s*\/?>/gi,' ').replace(/<[^>]*>/g,'').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&');}
+function sayText(t){return stripTags(t).replace(RE_EMOJI,'').replace(/[◯✕«»「」]/g,' ').replace(/\s+/g,' ').trim();}
+function speak(txt){
+ if(!S.settings.read)return;
+ try{const u=new SpeechSynthesisUtterance(txt);u.lang='ja-JP';u.rate=.95;
+  speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}
+}
+
+/* ================= esc ================= */
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ================= プロフィール選択・作成 ================= */
+let regDraft=null;
+function renderProfiles(){
+ const el=$('scr-profiles');
+ let h='<div class="wrap"><div class="hero"><h1>⚙️ モコの からくり工房</h1>'
+  +'<p class="mut">だれが あそぶ?</p></div>';
+ 
+ h+='<div class="pgrid">';
+ S.order.forEach(id=>{
+  const p=S.profiles[id];const cleared=Object.values(p.stages).filter(x=>x.clear).length;
+  h+='<button class="pcard" onclick="pickProfile(\''+id+'\')">'
+   +'<span class="pav">'+p.avatar+'</span>'
+   +'<span class="pnm">'+esc(p.name)+'</span>'
+   +'<span class="pmeta">Lv'+p.level+' ・ '+cleared+'めん</span></button>';
+ });
+ if(S.order.length<maxProfiles())
+  h+='<button class="pcard add" onclick="startReg()"><span class="pav">➕</span><span class="pnm">あたらしい なかま</span></button>';
+ else if(LITE)
+  h+='<div class="pcard locked"><span class="pav">🔒</span><span class="pnm">フルばんは 12にん</span></div>';
+ h+='</div>';
+ h+='<div class="pfoot"><button class="btn ghost small" onclick="go(\'parent\')">🔑 おうちのかた</button></div>';
+ h+='</div>';
+ el.innerHTML=h;
+}
+window.showTower=()=>{
+ SFX.tap();
+ const tw=towerStats();
+ // 塔の視覚: dan 段ぶんの階を積む(上ほど狭い)
+ let floors='';
+ for(let i=tw.dan;i>=1;i--){
+  const w=34+i*5;   // 下ほど広い
+  floors+='<div class="tFloor" style="width:'+w+'%">'+(i===tw.dan?'🏯':(i%2?'🏮':'🪟'))+'</div>';
+ }
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<h2>🏯 かぞくの からくり塔</h2>'
+  +'<div class="towerViz">'+floors+'<div class="tGround"></div></div>'
+  +'<div class="pit" style="display:block;margin:10px auto;max-width:fit-content">いま <b>'+tw.dan+'</b>だん</div>'
+  +(tw.dan<10
+    ?'<div class="sub">みんなの クリアと ぴったりしょうで そだつよ。<br>つぎの だんまで あと <b>'+tw.next+'</b>かい!</div>'
+    :'<div class="sub">てっぺんまで できあがった! かぞくの ちからだね! 🎉</div>')
+  +'<button class="btn" style="margin-top:12px" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button>'
+  +'</div></div>';
+};
+window.pickProfile=(id)=>{S.cur=id;save();go('home');};
+window.startReg=()=>{regDraft={name:'',avatar:AVATARS[0],theme:'adventure',grade:'g34',step:0};renderReg();};
+function renderReg(){
+ const el=$('scr-profiles');const d=regDraft;
+ let h='<div class="wrap"><div class="hero"><h1>あたらしい なかま</h1></div>';
+ // なまえ
+ h+='<div class="regsec"><div class="reglbl">なまえ</div>'
+  +'<input id="regName" class="reginput" maxlength="6" value="'+esc(d.name)+'" placeholder="なまえを いれてね"></div>';
+ // アバター
+ h+='<div class="regsec"><div class="reglbl">キャラ</div><div class="chips">';
+ AVATARS.forEach(a=>{h+='<button class="chip'+(a===d.avatar?' on':'')+'" onclick="regSet(\'avatar\',\''+a+'\')">'+a+'</button>';});
+ h+='</div></div>';
+ // 学年帯
+ h+='<div class="regsec"><div class="reglbl">がくねん</div><div class="chips">';
+ Object.keys(GRADES).forEach(g=>{h+='<button class="chip wide'+(g===d.grade?' on':'')+'" onclick="regSet(\'grade\',\''+g+'\')">'+GRADES[g].label+'</button>';});
+ h+='</div>'+(LITE?'<div class="mut sm">おためし版は みんな Lv1から はじまります</div>':'<div class="mut sm">Lv'+GRADES[d.grade].start+'から はじまります</div>')+'</div>';
+ // テーマ
+ h+='<div class="regsec"><div class="reglbl">いろ</div><div class="chips">';
+ THEMES.forEach(t=>{h+='<button class="chip wide'+(t===d.theme?' on':'')+'" onclick="regSet(\'theme\',\''+t+'\')">'+THEME_LABEL[t]+'</button>';});
+ h+='</div></div>';
+ h+='<div class="actions"><button class="btn ghost" onclick="go(\'profiles\')">やめる</button>'
+  +'<button class="btn" onclick="finishReg()">できた!</button></div></div>';
+ el.innerHTML=h;
+ const ni=$('regName');if(ni)ni.oninput=e=>{d.name=e.target.value;};
+ document.body.dataset.theme=d.theme;
+}
+window.regSet=(k,v)=>{regDraft[k]=v;renderReg();};
+window.finishReg=()=>{
+ const d=regDraft;const nm=(d.name||'').trim()||'モコ';
+ const p=newProfile(nm,d.avatar,d.theme,d.grade);
+ S.profiles[p.id]=p;S.order.push(p.id);S.cur=p.id;save();
+ regDraft=null;go('home');
+};
+
+/* ================= ステージマップ ================= */
+/* ================= ホーム(マップ・はらっぱ・塔・おうちのかた) ================= */
+/* ================= しんめパスポート ポータル(読み取り専用) ================= */
+/* アプリ名の既知辞書。未知キーはそのまま英字で出す(隠さない・解釈しない) */
+const APP_NAMES={karakuri:'からくり工房', manabi:'まなびクエスト'};
+function appLabel(k){return APP_NAMES[k]||k;}
+function charById(id){return KARA_CHARS.find(c=>c.id===id)||null;}
+/* この端末のプロフィール1人の集計(ローカル) */
+function localProfileStats(p){
+ let clear=0,pit=0;
+ Object.values(p.stages||{}).forEach(x=>{if(x.clear)clear++;if(x.pit)pit++;});
+ const col=p.collection||{};
+ const got=Object.keys(col).filter(k=>colN(col[k])>0).length;
+ const total=(LITE?gachaPool().length:KARA_CHARS.length);
+ return {clear,pit,got,total};
+}
+function fmtDateShort(ms){const d=new Date(ms);
+ const pad=n=>String(n).padStart(2,'0');
+ return (d.getMonth()+1)+'/'+d.getDate()+' '+pad(d.getHours())+':'+pad(d.getMinutes());}
+
+function renderPassport(){
+ const el=$('scr-passport');const p=curP();if(!p){go('profiles');return;}
+ // --- ローカル部(常時) ---
+ let h='<div class="wrap"><div class="hometop">'
+  +'<button class="btn ghost small" onclick="go(\'home\')">◀ ホーム</button>'
+  +'<span class="sp"></span></div>';
+ h+='<div class="hero" style="margin:4px 0 12px"><h1>🎫 パスポート</h1>'
+  +'<p class="mut">かぞくの きろくと あつめたもの</p></div>';
+ // §2.1 この端末のなかま(登録順固定・比較表現なし)
+ h+='<div class="psec"><div class="reglbl">この たんまつの なかま</div>';
+ S.order.forEach(uuid=>{
+  const q=S.profiles[uuid];if(!q)return;
+  const st=localProfileStats(q);
+  h+='<div class="ppRow"><span class="ppAva">'+q.avatar+'</span>'
+   +'<span class="ppName">'+esc(q.name)+'</span>'
+   +'<span class="ppLv">Lv'+q.level+'</span>'
+   +'<span class="ppStat">🏁'+st.clear+' ⭐'+st.pit+' 📚'+st.got+'/'+st.total+'</span></div>';
+ });
+ // この端末のしんめコレクション(全員合算・同期がなくても見える)
+ {
+  const gotSet={};
+  S.order.forEach(uuid=>{const q=S.profiles[uuid];if(!q)return;
+   const cc=q.collection||{};for(const cid in cc)if(colN(cc[cid])>0)gotSet[cid]=true;});
+  const gotN=Object.keys(gotSet).length;
+  const pool=(LITE?gachaPool():KARA_CHARS);
+  h+='<div class="ppsub" style="margin-top:10px">しんめコレクション(この たんまつ) <span class="mut">'+gotN+'/'+pool.length+'たい</span></div>';
+  h+='<div class="ppChars">';
+  pool.forEach(c=>{h+='<span class="ppChar'+(gotSet[c.id]?'':' lk')+'">'+(gotSet[c.id]?c.e:'❔')+'</span>';});
+  h+='</div>';
+ }
+ h+='</div>';
+ // §2.2/2.3 クラウド部(プレースホルダ。二段描画で差し込む)
+ const cfg=!!(S.cloud&&S.cloud.pass);
+ h+='<div id="ppCloud">';
+ if(!cfg){
+  h+='<div class="psec dim"><div class="reglbl">☁️ かぞくの パスポート</div>'
+   +'<div class="mut sm">おうちのかたメニューで かぞく同期を せっていすると、'
+   +'かぞく ぜんいんの パスポートと あつめたものが ここに ならぶよ。</div></div>';
+ }else{
+  // キャッシュがあれば即表示、なければ「よみこみ中」
+  const cache=S.passportCache;
+  if(cache&&cache.passport!==undefined){
+   h+=passportCloudHtml(cache,true);
+  }else{
+   h+='<div class="psec"><div class="reglbl">☁️ かぞくの パスポート</div>'
+    +'<div class="mut sm">よみこみ中…</div></div>';
+  }
+ }
+ h+='</div></div>';
+ el.innerHTML=h;
+ // --- クラウド部を非同期で取得して差し替え(ローカル表示はブロックしない) ---
+ if(cfg)refreshPassportCloud();
+}
+/* クラウドのパスポート+コレクションを描くHTML。stale=キャッシュ表示か */
+function passportCloudHtml(data,stale){
+ const passport=data.passport, collection=data.collection;
+ let h='';
+ if(stale&&data.at){
+  h+='<div class="mut sm" style="text-align:center;margin:6px 0">'
+   +(data.failed?'☁️ いま つながらないみたい。まえの すがたを みせているよ':'まえに みたとき: '+fmtDateShort(data.at))+'</div>';
+ }
+ // §2.2 かぞくのパスポート
+ h+='<div class="psec"><div class="reglbl">☁️ かぞくの パスポート</div>';
+ if(passport&&passport.profiles&&Object.keys(passport.profiles).length){
+  h+='<div class="ppsub">かぞくの なかま</div>';
+  for(const uuid in passport.profiles){
+   const pr=passport.profiles[uuid];
+   const here=!!S.profiles[uuid];
+   h+='<div class="ppRow"><span class="ppAva">'+(pr.avatar||'🙂')+'</span>'
+    +'<span class="ppName">'+esc(pr.name||'なかま')+'</span>'
+    +(here?'<span class="ppHere">この たんまつにも いるよ</span>':'')+'</div>';
+  }
+ }else h+='<div class="mut sm">まだ かぞくの なかまが とうろく されていないよ。</div>';
+ // あしあと
+ if(passport&&passport.apps&&Object.keys(passport.apps).length){
+  h+='<div class="ppsub" style="margin-top:10px">あしあと</div>';
+  for(const k in passport.apps){
+   const a=passport.apps[k]||{};
+   h+='<div class="ppRow"><span class="ppName">'+esc(appLabel(k))+'</span>'
+    +(a.last?'<span class="ppStat">さいごに あそんだ日: '+esc(String(a.last))+'</span>':'')+'</div>';
+  }
+ }
+ h+='</div>';
+ // §2.3 しんめコレクション
+ h+='<div class="psec"><div class="reglbl">🌟 しんめ コレクション</div>';
+ const apps=(collection&&collection.apps)||{};
+ const appKeys=Object.keys(apps);
+ if(!appKeys.length)h+='<div class="mut sm">まだ あつめたものが ないよ。</div>';
+ for(const ak of appKeys){
+  const region=apps[ak]||{};
+  if(ak==='karakuri'){
+   // 自区画: 絵文字で描く。全プロフィール合算のユニーク獲得
+   const gotSet={};
+   for(const uuid in region){const cc=region[uuid]||{};for(const cid in cc)if(colN(cc[cid])>0)gotSet[cid]=true;}
+   const ids=Object.keys(gotSet);
+   h+='<div class="ppsub">からくり工房 <span class="mut">'+ids.length+'/'+KARA_CHARS.length+'たい</span></div>';
+   h+='<div class="ppChars">';
+   KARA_CHARS.forEach(c=>{h+='<span class="ppChar'+(gotSet[c.id]?'':' lk')+'">'+(gotSet[c.id]?c.e:'❔')+'</span>';});
+   h+='</div>';
+  }else{
+   // 他アプリ区画: 数のみ(中身を推測しない)
+   let n=0;
+   for(const uuid in region){const cc=region[uuid]||{};n+=Object.keys(cc).filter(cid=>colN(cc[cid])>0).length;}
+   h+='<div class="ppsub">'+esc(appLabel(ak))+' <span class="mut">'+n+'たい あつめたよ</span></div>';
+   h+='<div class="mut sm">くわしくは '+esc(appLabel(ak))+'で みてね。</div>';
+  }
+ }
+ h+='</div>';
+ return h;
+}
+/* クラウド取得→キャッシュ更新→差し替え(失敗はキャッシュ+文言) */
+async function refreshPassportCloud(){
+ const box=$('ppCloud');if(!box)return;
+ try{
+  const {key,id}=await cloudKeys();
+  const passport=await cloudReadRow(id+':passport',key)||{profiles:{},apps:{}};
+  const collection=await cloudReadRow(id+':collection',key)||{apps:{}};
+  S.passportCache={at:Date.now(),passport,collection};save();
+  box.innerHTML=passportCloudHtml(S.passportCache,false);
+ }catch(e){
+  const cache=S.passportCache;
+  if(cache&&cache.passport!==undefined){
+   box.innerHTML=passportCloudHtml(Object.assign({},cache,{failed:true}),true);
+  }else{
+   box.innerHTML='<div class="psec"><div class="reglbl">☁️ かぞくの パスポート</div>'
+    +'<div class="mut sm">☁️ いま つながらないみたい。でんぱの あるところで もういちど ひらいてね。</div></div>';
+  }
+ }
+}
+function renderHome(){
+ const el=$('scr-home');const p=curP();if(!p){go('profiles');return;}
+ const tw=towerStats();
+ let h='<div class="wrap"><div class="hometop">'
+  +'<button class="btn ghost small" onclick="go(\'profiles\')">'+p.avatar+' '+esc(p.name)+'</button>'
+  +'<span class="sp"></span><div class="coinPill">🪙 '+p.coins+'</div></div>';
+ h+='<div class="hero" style="margin:6px 0 14px"><h1>⚙️ からくり工房</h1>'
+  +'<p class="mut">きょうは なにを する?</p></div>';
+ h+='<div class="homeGrid">';
+ h+='<button class="homeCard" onclick="go(\'map\')"><span class="hIcon">🗺️</span>'
+  +'<span class="hName">ぼうけんマップ</span><span class="hSub">Lv'+p.level+' まで あそべる</span></button>';
+ h+='<button class="homeCard" onclick="openHarappa()"><span class="hIcon">🌼</span>'
+  +'<span class="hName">れんしゅうの はらっぱ</span><span class="hSub">むげんに れんしゅう</span></button>';
+ h+='<button class="homeCard" onclick="showTower()"><span class="hIcon">🏯</span>'
+  +'<span class="hName">かぞくの からくり塔</span><span class="hSub">いま '+tw.dan+'だん</span></button>';
+ h+='<button class="homeCard" onclick="go(\'parent\')"><span class="hIcon">🔑</span>'
+  +'<span class="hName">おうちのかた</span><span class="hSub">せってい・どうき</span></button>';
+ h+='</div>';
+ h+='<button class="homeCard wide" onclick="go(\'passport\')"><span class="hIcon">🎫</span>'
+  +'<span class="hName">パスポート</span><span class="hSub">かぞくの きろくと あつめたもの</span></button>';
+ h+='<div class="endday"><button class="btn end" onclick="endDay()">🌙 きょうは これで おしまい!</button></div>';
+ h+='</div>';
+ el.innerHTML=h;
+}
+/* 原っぱのレベル選択(クリア済みLvのみ活性・先取りさせない) */
+window.openHarappa=()=>{
+ if(LITE){liteLock();return;}
+ SFX.tap();
+ const p=curP();
+ const MAX_LV=Math.max.apply(null,STAGES.filter(x=>!x.harappa).map(x=>x.lv));
+ let btns='',any=false;
+ for(let lv=1;lv<=MAX_LV;lv++){
+  const done=STAGES.filter(x=>x.lv===lv&&!x.harappa).every(x=>p.stages[x.id]&&p.stages[x.id].clear);
+  if(done)any=true;
+  btns+='<button class="chip'+(done?'':' lk')+'" '+(done?'onclick="$(\'ovl\').innerHTML=\'\';startHarappa('+lv+')"':'disabled')+'>'
+   +'Lv'+lv+(done?'':' 🔒')+'</button>';
+ }
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div style="font-size:2rem">🌼</div><h2>れんしゅうの はらっぱ</h2>'
+  +(any?'<div class="sub">どの レベルで れんしゅう する?</div>'
+       :'<div class="sub">マップで 8めん クリアすると、その レベルの はらっぱで あそべるよ!</div>')
+  +'<div class="chips" style="justify-content:center;margin:10px 0">'+btns+'</div>'
+  +'<button class="btn ghost" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button>'
+  +'</div></div>';
+};
+function renderMap(){
+ const el=$('scr-map');const p=curP();if(!p){go('profiles');return;}
+ const MAX_LV=Math.max.apply(null,STAGES.map(s=>s.lv));
+ const maxLv=LITE?Math.min(LITE_MAXLV,MAX_LV):MAX_LV;
+ if(mapLv==null||mapLv>p.level)mapLv=p.level;
+ if(mapLv>maxLv)mapLv=maxLv;
+ let h='<div class="wrap"><div class="maptop">'
+  +'<button class="btn ghost small" onclick="go(\'home\')">◀ ホーム</button>'
+  +'<div class="coinPill">🪙 '+p.coins+'</div>'
+  +'<span class="sp"></span>'
+  +'<button class="btn ghost small" onclick="openGacha()">🎁 ガチャ</button></div>';
+ // レベルタブ
+ h+='<div class="lvtabs">';
+ for(let lv=1;lv<=maxLv;lv++){
+  const locked=lv>p.level;
+  h+='<button class="lvtab'+(lv===mapLv?' on':'')+(locked?' lk':'')+'" '
+   +(locked?'disabled':'onclick="setMapLv('+lv+')"')+'>Lv'+lv+(locked?' 🔒':'')+'</button>';
+ }
+ h+='</div>';
+ // ノード8個
+ h+='<div class="nodes">';
+ const lvStages=STAGES.filter(x=>x.lv===mapLv&&!x.harappa);
+ lvStages.forEach(st=>{
+  const idx=STAGES.findIndex(x=>x.id===st.id);
+  const rec=p.stages[st.id];
+  const allowed=isStageAllowed(idx);
+  const playable=isStagePlayable(idx);
+  let cls='node',inner='';
+  if(!allowed){cls+=' lite';inner='<span class="nlk">🔒</span>';}
+  else if(!playable){cls+=' soon';inner='<span class="nlk">･</span>';}
+  else{
+   inner='<span class="nname">'+esc(st.name)+'</span>';
+   if(rec&&rec.clear){
+    const stars=rec.pit?'⭐⭐⭐':'⭐⭐';
+    inner+='<span class="nstars">'+stars+(rec.kara?'⚙️':'')+'</span>';
+   }else inner+='<span class="nstars dim">・・</span>';
+  }
+  h+='<button class="'+cls+'" '+(playable?'onclick="startStage('+idx+')"':(!allowed?'onclick="liteLock()"':'disabled'))+'>'
+   +'<span class="nid">'+st.id+'</span>'+inner+'</button>';
+ });
+ h+='</div>';
+ h+='</div>';
+ el.innerHTML=h;
+ applyTheme();
+ checkRest();
+}
+let mapLv=null;
+window.setMapLv=(lv)=>{mapLv=lv;renderMap();};
+
+/* ================= 休憩提案 ================= */
+let playStreak=0, lastRestPrompt=0;
+function checkRest(){
+ // マップに戻るたびにチェック。連続10面クリアで一度だけ休憩提案
+ if(playStreak>=10 && Date.now()-lastRestPrompt>1000*60*20){
+  lastRestPrompt=Date.now();playStreak=0;
+  toast('モコ「たくさん あそんだね! ちょっと やすもうか?」');
+ }
+}
+function toast(msg){
+ const t=document.createElement('div');t.className='toast';t.textContent=msg;
+ document.body.appendChild(t);setTimeout(()=>t.remove(),3200);
+}
+
+/* ================= ライト版ロックのモーダル ================= */
+window.liteLock=()=>{
+ $('ovl').innerHTML='<div class="overlay" onclick="if(event.target===this)this.remove()"><div class="rcard">'
+  +'<div style="font-size:2.4rem">🔒</div>'
+  +'<h2>ここは フルばん</h2>'
+  +'<p class="mut" style="margin:8px 0 14px">この さきの めんは、フルばんで あそべるよ。<br>おうちの ひとに きいてみてね!</p>'
+  +'<div style="display:flex;gap:10px;justify-content:center">'
+  +'<button class="btn ghost" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button>'
+  +'<button class="btn" onclick="liteParent()">おうちの ひとに みせる</button></div>'
+  +'</div></div>';
+};
+window.liteParent=()=>{
+ $('ovl').innerHTML='<div class="overlay" onclick="if(event.target===this)this.remove()"><div class="rcard" style="text-align:left">'
+  +'<h2 style="text-align:center">おうちのかたへ</h2>'
+  +'<p class="mut" style="font-size:.82rem;line-height:1.9;margin:8px 0">これは<b>おためし版</b>です。プログラミング的思考をはぐくむ学習アプリ「モコのからくり工房」のフル版では、以下が楽しめます。</p>'
+  +'<ul class="lkul">'
+  +'<li><b>Lv1〜8の全64面</b>(おためし版はLv1〜3の前半のみ)</li>'
+  +'<li><b>くりかえし・じょうけん・わざ</b>など、より高度な思考</li>'
+  +'<li><b>なかま12人 ／ ずかん24体</b></li>'
+  +'</ul>'
+  +'<div style="text-align:center;margin-top:12px">'
+  +(SHOP?'<a class="btn" href="'+esc(SHOP)+'" target="_blank" rel="noopener">フルばんを みる</a>':'<span class="mut">(はんばい じゅんび中)</span>')
+  +'</div>'
+  +'<div style="text-align:center;margin-top:10px"><button class="btn ghost small" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button></div>'
+  +'</div></div>';
+};
+
+/* ================= おしまいボタン(v1: 儀式のみ・同期なし) ================= */
+window.endDay=()=>{
+ const p=curP();
+ const cleared=Object.values(p.stages).filter(x=>x.clear).length;
+ const pits=Object.values(p.stages).filter(x=>x.pit).length;
+ // かぞくのからくり塔(統一導出)
+ const tower=towerStats().dan;
+ SFX.endday();
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div style="font-size:2.2rem">🌙</div>'
+  +'<h2>きょうも よく がんばったね!</h2>'
+  +'<div class="summary">'
+  +'<div class="srow"><span>クリアした めん</span><b>'+cleared+'</b></div>'
+  +'<div class="srow"><span>ぴったりしょう</span><b>'+pits+'</b></div>'
+  +'<div class="srow"><span>🪙 コイン</span><b>'+p.coins+'</b></div>'
+  +'</div>'
+  +'<div class="tower">🏯 かぞくの からくり塔 <b>'+tower+'</b>だん</div>'
+  +(S.cloud&&S.cloud.pass?'<div id="endSync" class="mut sm" style="margin:10px 0">☁️ おそらに とどけているよ…</div>':'')
+  +'<p class="mut" style="margin:12px 0">また あしたね!</p>'
+  +'<button class="btn" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button>'
+  +'</div></div>';
+ // 同期設定済みなら push(§3: 成否を正直に表示。失敗を成功と偽らない)
+ if(S.cloud&&S.cloud.pass){
+  cloudPush().then(()=>{
+   const e=$('endSync');if(e){e.textContent='☁️ おそらに とどけたよ! ✓';e.style.color='var(--leaf2)';}
+  }).catch(()=>{
+   const e=$('endSync');if(e){e.textContent='☁️ でんぱが なくて とどかなかった。また こんど おしてね';e.style.color='var(--coral)';}
+  });
+ }
+};
+
+/* ================= ガチャ(からくり仲間24体) ================= */
+const KARA_CHARS=(()=>{
+ const N=['⚙️','🔩','🔧','🪛','🔨','⛏️','🧲','🔗','📎','🪝','⚗️','🧪','🔦','🔋'];
+ const R=['🤖','🦾','🛠️','⏰','📟','🎛️','🕹️'];
+ const SR=['🛸','🚀','🌟'];
+ let arr=[],i=1;
+ N.forEach(e=>arr.push({id:'kk_'+String(i++).padStart(2,'0'),e:e,r:'N'}));
+ R.forEach(e=>arr.push({id:'kk_'+String(i++).padStart(2,'0'),e:e,r:'R'}));
+ SR.forEach(e=>arr.push({id:'kk_'+String(i++).padStart(2,'0'),e:e,r:'SR'}));
+ return arr;
+})();
+function gachaPool(){return LITE?KARA_CHARS.filter(c=>c.r!=='SR').slice(0,8):KARA_CHARS;}
+window.openGacha=()=>{
+ const p=curP();
+ const owned=Object.keys(p.collection).length,total=gachaPool().length;
+ let h='<div class="overlay"><div class="rcard">'
+  +'<h2>🎁 ガチャ</h2>'
+  +'<div class="mut" style="margin:4px 0 12px">30コインで からくり なかまを 1たい</div>'
+  +'<div class="coinPill" style="margin:0 auto 12px">🪙 '+p.coins+'</div>';
+ h+='<div style="display:flex;gap:10px;justify-content:center;margin-bottom:12px">'
+  +'<button class="btn'+(p.coins<30?' ':'')+'" '+(p.coins<30?'disabled':'onclick="doGacha()"')+'>ひく!</button>'
+  +'<button class="btn ghost" onclick="showZukan()">ずかん '+owned+'/'+total+'</button></div>';
+ h+='<button class="btn ghost small" onclick="$(\'ovl\').innerHTML=\'\';renderMap()">とじる</button>';
+ h+='</div></div>';
+ $('ovl').innerHTML=h;
+};
+window.doGacha=()=>{
+ const p=curP();if(p.coins<30)return;
+ p.coins-=30;
+ const r=Math.random();
+ const rar=LITE?(r<.3?'R':'N'):(r<.05?'SR':(r<.32?'R':'N'));
+ let pool=gachaPool().filter(c=>c.r===rar);if(!pool.length)pool=gachaPool();
+ const g=pool[Math.floor(Math.random()*pool.length)];
+ const had=p.collection[g.id];
+ p.collection[g.id]={n:(had?had.n:0)+1};
+ save();SFX.gacha();
+ const dup=had?'<div class="pit">スター +1!(おなじ なかま)</div>':'<div class="pit">あたらしい なかま!</div>';
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div style="font-size:3rem;animation:popIn .4s">'+g.e+'</div>'
+  +'<h2>'+({N:'ノーマル',R:'レア',SR:'スーパーレア'}[g.r])+'</h2>'
+  +dup+'<div class="srow" style="justify-content:center">スター ×'+p.collection[g.id].n+'</div>'
+  +'<div class="coinPill" style="margin:8px auto 0">🪙 '+p.coins+'</div>'
+  +'<div style="display:flex;gap:10px;justify-content:center;margin-top:10px">'
+  +'<button class="btn ghost" onclick="openGacha()">もどる</button>'
+  +(p.coins>=30?'<button class="btn" onclick="doGacha()">もう1かい</button>':'')
+  +'</div></div></div>';
+};
+window.showZukan=()=>{
+ const p=curP();const pool=gachaPool();
+ let h='<div class="overlay"><div class="rcard" style="max-width:380px">'
+  +'<h2>📖 からくり ずかん</h2><div class="zgrid">';
+ pool.forEach(c=>{
+  const o=p.collection[c.id];
+  h+='<div class="zcell'+(o?' got':'')+'">'+(o?c.e:'❔')+(o&&o.n>1?'<span class="zn">×'+o.n+'</span>':'')+'</div>';
+ });
+ h+='</div><button class="btn ghost small" onclick="openGacha()" style="margin-top:12px">もどる</button></div></div>';
+ $('ovl').innerHTML=h;
+};
+
+/* ================= 親メニュー(PIN保護) ================= */
+let parentAuthed=false, pinBuf='';
+function renderParent(){
+ const el=$('scr-parent');
+ if(!parentAuthed){
+  el.innerHTML='<div class="wrap"><div class="hero"><h1>🔑 おうちのかた</h1>'
+   +'<p class="mut">あんしょうばんごう(4けた)</p></div>'
+   +'<div class="pindots" id="pindots"></div>'
+   +'<div class="pinpad">'
+   +[1,2,3,4,5,6,7,8,9].map(n=>'<button class="pinkey" onclick="pinPush(\''+n+'\')">'+n+'</button>').join('')
+   +'<button class="pinkey ghost" onclick="pinDel()">⌫</button>'
+   +'<button class="pinkey" onclick="pinPush(\'0\')">0</button>'
+   +'<button class="pinkey ghost" onclick="go(\'profiles\')">✕</button>'
+   +'</div><div class="mut sm" style="text-align:center;margin-top:10px">しょきち: 1234</div></div>';
+  drawPinDots();
+  return;
+ }
+ const p=curP();
+ let h='<div class="wrap"><div class="maptop"><button class="btn ghost small" onclick="parentExit()">◀ もどる</button>'
+  +'<span class="sp"></span><h1 style="font-size:1rem">おうちのかた メニュー</h1></div>';
+ // コイン上限(プロフィール単位)
+ if(p){
+  h+='<div class="psec"><div class="reglbl">🪙 コインの 1にち じょうげん ('+esc(p.name)+')</div><div class="chips">';
+  [['30','30'],['60','60'],['100','100'],['-1','せいげんなし']].forEach(([v,lbl])=>{
+   const cur=(p.coinCap==null?60:p.coinCap);
+   h+='<button class="chip'+(String(cur)===v?' on':'')+'" onclick="setCap('+v+')">'+lbl+'</button>';
+  });
+  h+='</div></div>';
+ }
+ // 設定
+ h+='<div class="psec"><div class="reglbl">せってい</div>'
+  +'<label class="tog"><input type="checkbox" id="setSound"'+(S.settings.sound?' checked':'')+'> おと</label>'
+  +'<label class="tog"><input type="checkbox" id="setRead"'+(S.settings.read?' checked':'')+'> よみあげ</label></div>';
+ // PIN変更
+ h+='<div class="psec"><div class="reglbl">あんしょうばんごう</div>'
+  +'<button class="btn ghost small" onclick="changePin()">かえる</button></div>';
+ // バックアップ
+ h+='<div class="psec"><div class="reglbl">バックアップ</div>'
+  +'<div class="mut sm" style="margin-bottom:8px">データは この たんまつの 中だけに ほぞんされます。ときどき かきだして ひかえを のこしてください。</div>'
+  +'<div style="display:flex;gap:8px;flex-wrap:wrap">'
+  +'<button class="btn ghost small" onclick="doExport()">かきだす</button>'
+  +'<button class="btn ghost small" onclick="doImport()">よみこむ</button></div>'
+  +'<textarea id="ioBox" class="iobox" placeholder="ここに バックアップ もじれつが でます / はりつけます"></textarea></div>';
+ // かぞく同期(Supabase)
+ {
+  const c=S.cloud||{};
+  const configured=!!(c.url&&c.key&&c.pass);
+  h+='<div class="psec"><div class="reglbl">☁️ かぞく同期(Supabase)</div>';
+  h+='<div class="mut sm" style="margin-bottom:8px">おなじ あいことばの アプリと しんちょくを わけあえます(まなびクエストと きょうつう)。</div>';
+  if(configured){
+   const last=c.lastSync?new Date(c.lastSync).toLocaleString('ja-JP'):'まだ';
+   h+='<div class="mut sm" style="margin-bottom:6px">せってい ずみ ✓ / さいご: '+last+'</div>';
+   h+='<div id="syncMsg" class="mut sm" style="margin-bottom:8px;min-height:1.2em"></div>';
+   h+='<div style="display:flex;gap:8px;flex-wrap:wrap">'
+    +'<button class="btn small" onclick="uiSyncPush()">⬆️ アップロード</button>'
+    +'<button class="btn ghost small" onclick="uiSyncPull()">⬇️ ダウンロード</button>'
+    +'<button class="btn ghost small" onclick="uiSyncForget()">あいことばを けす</button></div>';
+  }else{
+   h+='<div style="display:flex;flex-direction:column;gap:6px">'
+    +'<input id="cfUrl" class="cfIn" placeholder="Supabase URL (https://xxx.supabase.co)" value="'+esc(c.url||'')+'">'
+    +'<input id="cfKey" class="cfIn" placeholder="APIキー (anon / publishable)" value="'+esc(c.key||'')+'">'
+    +'<input id="cfPass" class="cfIn" placeholder="あいことば(かぞくで おなじもの)" value="'+esc(c.pass||'')+'">'
+    +'</div>';
+   h+='<div class="mut sm" style="margin-top:6px">⚠️ あいことばは データの「かぎ」です。'
+    +'まなびクエストと <b>同じもの</b>を つかうと しんちょくが つながります。'
+    +'ちがう あいことばに すると、<b>べつの データ置き場</b>に つながります(まえのデータが きえたように 見えます)。</div>';
+   h+='<div id="syncMsg" class="mut sm" style="margin:8px 0;min-height:1.2em"></div>';
+   h+='<div style="display:flex;gap:8px;flex-wrap:wrap">'
+    +'<button class="btn small" onclick="uiSyncSave()">せつぞく テスト & ほぞん</button></div>';
+  }
+  h+='</div>';
+ }
+ // なかま管理
+ h+='<div class="psec"><div class="reglbl">なかま</div>';
+ S.order.forEach(id=>{const q=S.profiles[id];
+  h+='<div class="prow"><span>'+q.avatar+' '+esc(q.name)+'</span>'
+   +'<button class="btn ghost small" onclick="delProfile(\''+id+'\')">けす</button></div>';});
+ h+='</div>';
+ h+='</div>';
+ el.innerHTML=h;
+ const ss=$('setSound');if(ss)ss.onchange=e=>{S.settings.sound=e.target.checked;save();};
+ const sr=$('setRead');if(sr)sr.onchange=e=>{S.settings.read=e.target.checked;save();};
+}
+
+/* ===== 同期UIハンドラ ===== */
+function syncMsg(t){const el=$('syncMsg');if(el)el.textContent=t;}
+window.uiSyncSave=async()=>{
+ const url=$('cfUrl').value.trim(), key=$('cfKey').value.trim(), pass=$('cfPass').value.trim();
+ if(!url||!key||!pass){syncMsg('URL・キー・あいことばを ぜんぶ いれてね');return;}
+ syncMsg('せつぞく テスト中…');
+ S.cloud={url,key,pass};
+ try{
+  const {id}=await cloudKeys();     // kdf が通るか
+  await cloudCall('mq_get',{p_id:id+':passport'});   // サーバー疎通
+  save();
+  syncMsg('つながりました! ほぞんしました ✓');
+  renderParent();
+ }catch(e){
+  S.cloud=null;
+  syncMsg('つながりませんでした: '+(e.message||'エラー')+'。URL・キーを かくにんしてね');
+ }
+};
+window.uiSyncPush=async()=>{
+ syncMsg('アップロード中…');
+ try{ await cloudPush(); syncMsg('おそらに とどけたよ! ✓'); renderParent(); }
+ catch(e){ syncMsg('でんぱが なくて とどかなかった: '+(e.message||'エラー')); }
+};
+window.uiSyncPull=async()=>{
+ syncMsg('ダウンロード中…');
+ try{ await cloudPull(); syncMsg('さいしんに しました ✓'); renderParent(); }
+ catch(e){ syncMsg('とれなかった: '+(e.message||'エラー')); }
+};
+window.uiSyncForget=()=>{
+ if(!confirm('あいことばと せつぞく せっていを けしますか?\n\n・この たんまつの データは きえません\n・おなじ あいことばを いれなおせば、また おなじ データに つながります\n・ちがう あいことばに すると、べつの データ置き場に つながります(まえの データが きえたように 見えますが、もとの あいことばで もどれます)'))return;
+ S.cloud=null;save();renderParent();
+};
+window.pinPush=(n)=>{if(pinBuf.length>=4)return;pinBuf+=n;drawPinDots();
+ if(pinBuf.length===4){if(pinBuf===S.pin){parentAuthed=true;pinBuf='';renderParent();}
+  else{pinBuf='';toast('ちがうみたい');drawPinDots();}}};
+window.pinDel=()=>{pinBuf=pinBuf.slice(0,-1);drawPinDots();};
+function drawPinDots(){const d=$('pindots');if(d)d.innerHTML=[0,1,2,3].map(i=>'<span class="pdot'+(i<pinBuf.length?' on':'')+'"></span>').join('');}
+window.parentExit=()=>{parentAuthed=false;go('home');};
+window.setCap=(v)=>{const p=curP();p.coinCap=(v==-1?-1:+v);save();renderParent();};
+window.changePin=()=>{const np=prompt('あたらしい 4けたの ばんごう');if(np&&/^\d{4}$/.test(np)){S.pin=np;save();toast('かえました');}else if(np)toast('4けたの すうじで');};
+window.doExport=()=>{const data={app:'karakuri',v:1,exported:new Date().toISOString(),state:S};
+ $('ioBox').value=btoa(unescape(encodeURIComponent(JSON.stringify(data))));toast('かきだしました');};
+window.doImport=()=>{try{const raw=$('ioBox').value.trim();if(!raw)return;
+ const data=JSON.parse(decodeURIComponent(escape(atob(raw))));
+ if(data.app!=='karakuri'||!data.state){toast('からくり工房の データでは ないみたい');return;}
+ if(!confirm('いまの データを うわがきします。よい?'))return;
+ S=data.state;migrate();save();parentAuthed=false;go('profiles');toast('よみこみました');
+ }catch(e){toast('よみこめませんでした');}};
+window.delProfile=(id)=>{if(!confirm('この なかまを けしますか?(もとに もどせません)'))return;
+ delete S.profiles[id];S.order=S.order.filter(x=>x!==id);
+ if(S.cur===id)S.cur=S.order[0]||null;save();renderParent();};
+
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+/* --- あしあと & ヒントのはしご --- */
+let fails={};
+function clearAssist(){
+ document.querySelectorAll('.ft,.ghostA').forEach(e=>e.remove());
+ document.querySelectorAll('.cell.glow').forEach(e=>e.classList.remove('glow'));
+}
+function showFootprints(cells){
+ const b=$('board');const d=Math.max(6,cellPx*0.16);
+ cells.forEach(c=>{
+  const e=document.createElement('span');e.className='ft';
+  e.style.left=(c.x*cellPx+cellPx/2-d/2)+'px';
+  e.style.top=(c.y*cellPx+cellPx/2-d/2)+'px';
+  e.style.width=d+'px';e.style.height=d+'px';
+  b.appendChild(e);
+ });
+}
+function showGhost(st){
+ // 最初の2手をゴースト矢印で見せる(3回失敗のとき)。原っぱは生成時の解パスから
+ const dirs=(st.harappa&&st.sol)?st.sol:bfsPath(st);if(!dirs.length)return;
+ const p=parseStage(st);let x=p.start[0],y=p.start[1];
+ const b=$('board');
+ for(let i=0;i<Math.min(2,dirs.length);i++){
+  const d=DIRS[dirs[i]];x+=d[0];y+=d[1];
+  const e=document.createElement('span');e.className='ghostA';
+  e.textContent=ARROWS[dirs[i]];
+  e.style.left=(x*cellPx+cellPx*0.32)+'px';e.style.top=(y*cellPx+cellPx*0.22)+'px';
+  e.style.animationDelay=(i*0.3)+'s';
+  b.appendChild(e);
+ }
+ msg('モコ「さいしょは こっちだよ!」');
+}
+function glowPath(st){
+ // 5回失敗: 道すじを1.2秒だけ ともす。原っぱは生成時の解パスから
+ const dirs=(st.harappa&&st.sol)?st.sol:bfsPath(st);const p=parseStage(st);
+ let x=p.start[0],y=p.start[1];
+ const cells=[[x,y]];
+ dirs.forEach(dd=>{const d=DIRS[dd];x+=d[0];y+=d[1];cells.push([x,y]);});
+ cells.forEach(c=>{
+  const el=document.querySelector('.cell[data-xy="'+c[0]+','+c[1]+'"]');
+  if(el)el.classList.add('glow');
+ });
+ msg('モコ「みちを ともすよ。よーく みてて!」');
+ setTimeout(()=>document.querySelectorAll('.cell.glow').forEach(e=>e.classList.remove('glow')),1200);
+}
+async function run(){
+ if(running||!prog.length)return;
+ const st=STAGES[cur];
+ if(hasEmptyContainer(prog))msg('からっぽの ブロックが あるよ');
+ running=true;$('btnRun').disabled=true;clearAssist();openC=null;drawProg();
+ const res=simulate(st,prog,skills);   // ❓・入れ子・⭐わざ を含めて res.path が正
+ const visited=[];
+ const moko=$('moko');
+ // 2倍速(Lv6解禁)。設定は curP に持たず、実行ごとにトグル状態を見る
+ const dur = (fastUnlocked() && fastOn) ? 180 : 360;
+ const clearHi=()=>{};   // インタープリタ化でソース対応の複雑な演出は廃止(path が正)
+ // path[0]=開始位置なので1から
+ for(let i=1;i<res.path.length;i++){
+  const p=res.path[i];
+  if(p.ev==='rock'){
+   SFX.bump();moko.classList.add('bump');fx('ごっつん!',res.path[i-1].x,res.path[i-1].y);
+   await sleep(600);moko.classList.remove('bump');
+   msg('いわに ごっつん! じゅんばんを なおしてみよう',true);
+   break;
+  }
+  // 🔁の周回が変わった最初の一歩で「◯かいめ!」(第2波の金色バッジ復活)
+  {const prev=res.path[i-1];const pl=prev&&prev.lap;
+   if(p.lap&&(!pl||pl.cur!==p.lap.cur||pl.total!==p.lap.total)){
+    fx(p.lap.cur+'かいめ!',p.x,p.y,'lap');
+   }}
+  moko.style.left=(p.x*cellPx)+'px';moko.style.top=(p.y*cellPx)+'px';
+  moko.classList.add('hop');SFX.step();
+  if(p.ev!=='sea')visited.push({x:p.x,y:p.y});
+  await sleep(dur);moko.classList.remove('hop');
+  if(p.got!==null&&p.got!==undefined){
+   const ce=$('chest'+p.got);
+   if(ce){ce.innerHTML=CHEST_OPEN;ce.classList.add('open');SFX.tap();}
+  }
+  if(p.ev==='sea'){
+   SFX.splash();moko.classList.add('splash');fx('ぽちゃん!',p.x,p.y);
+   await sleep(750);
+   msg('うみに ぽちゃん! もういちど やってみよう',true);
+   break;
+  }
+ }
+ clearHi();
+ if(res.ok){
+  chestList(st).forEach((c,i)=>{const e=$('chest'+i);if(e){e.innerHTML=CHEST_OPEN;e.classList.add('open');}});
+  moko.classList.add('cheer');SFX.clear();
+  await sleep(900);
+  showClear(res,st);
+ }else{
+  // 失敗: モコをスタートへ戻す(プログラムは残す=直して再挑戦)
+  await sleep(400);
+  moko.classList.remove('splash');
+  moko.style.left=(P.start[0]*cellPx)+'px';moko.style.top=(P.start[1]*cellPx)+'px';
+  clearHi();
+  if(res.reason==='short')msg('あと すこし! ブロックを たしてみよう',true);
+  else if(res.reason==='toolong')msg('ながすぎて モコが くたびれちゃう!',true);
+  else if(res.reason==='toomany')msg('ここでは つかえる ブロックが すくないよ! もっと みじかく',true);
+  // あしあと: どこまで あるけたかを 残す
+  showFootprints(visited);
+  // ヒントのはしご: 3回で最初の2手、5回で道あかり
+  fails[cur]=(fails[cur]||0)+1;
+  if(fails[cur]>=5)glowPath(st);
+  else if(fails[cur]>=3)showGhost(st);
+ }
+ running=false;$('btnRun').disabled=prog.length===0;
+ drawProg();   // 実行終了でパレットの🔁/❓無効化を解除(runningを見て再判定)
+}
+/* 原っぱのクリア: コイン2(上限内数)・自己ベスト表示のみ・進捗/塔に影響しない(仕様§4) */
+function showHarappaClear(res,st){
+ const p=curP();
+ HARA.best=HARA.best==null?res.blocks:Math.min(HARA.best,res.blocks);
+ const got=addCoins(p,2);
+ save();   // コインだけ保存(stages には書かない)
+ SFX.clear();
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div style="font-size:2rem">🌼</div>'
+  +'<h2>クリア!</h2>'
+  +'<div class="sub">つかったブロック: '+res.blocks+'こ</div>'
+  +'<div class="pit" style="display:block;margin:8px auto;max-width:fit-content">じこベスト: '+HARA.best+'こ</div>'
+  +(got>0?'<div class="sub">🪙 +'+got+'</div>':'<div class="sub mut">きょうの コインは まんたん</div>')
+  +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">'
+  +'<button class="btn ghost" onclick="$(\'ovl\').innerHTML=\'\';go(\'home\')">ホームへ</button>'
+  +'<button class="btn" onclick="nextHarappa()">🌼 つぎの はらっぱ</button>'
+  +'</div></div></div>';
+}
+function showClear(res,st){
+ if(st.harappa){showHarappaClear(res,st);return;}
+ /* 仕様§3.1: 判定は <=(以下)。parR は provePar が下限を証明しているため
+    「下回る解」は存在せず、<= にしても抜け道は生まれない。 */
+ const pit=res.blocks<=st.par;
+ const kara=repUnlocked()&&st.parR&&res.blocks<=st.parR;
+ const p=curP();
+ // 進捗を記録(初回判定のためにクリア前の状態を退避)
+ const prev=p.stages[st.id]||{};
+ const firstClear=!prev.clear, firstPit=pit&&!prev.pit, firstKara=kara&&!prev.kara;
+ const rec=p.stages[st.id]={
+  clear:true,
+  best:Math.min(prev.best||99, res.blocks),
+  pit:prev.pit||pit, kara:prev.kara||kara
+ };
+ // コイン: 初回クリア10 / ぴったり初回+5 / からくり初回+5 / 再クリア2
+ let gain=0;
+ if(firstClear)gain+=10; else gain+=2;
+ if(firstPit)gain+=5;
+ if(firstKara)gain+=5;
+ const got=addCoins(p,gain);
+ playStreak++;
+ // レベル解禁: そのレベルの8面すべて clear で次レベル解放
+ const lv=st.lv;
+ const lvStages=STAGES.filter(x=>x.lv===lv&&!x.harappa);
+ let leveledTo=0;
+ const MAX_LV=Math.max.apply(null,STAGES.map(s=>s.lv));
+ if(lvStages.every(x=>p.stages[x.id]&&p.stages[x.id].clear) && p.level===lv && lv<MAX_LV){
+  p.level=lv+1; leveledTo=p.level;
+ }
+ save();
+ const idx=STAGES.findIndex(x=>x.id===st.id);
+ const last=idx===STAGES.length-1 || !isStagePlayable(idx+1);
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<h2>クリア!</h2>'
+  +'<div class="stars">'+(pit?'⭐⭐⭐':'⭐⭐')+(kara?' ⚙️':'')+'</div>'
+  +(kara?'<div class="pit kara">⚙️ からくりしょう! '+res.blocks+'こ</div>':'')
+  +(pit?'<div class="pit">✨ ぴったりしょう! '+res.blocks+'こ</div>'
+       :'<div class="sub">つかったブロック: '+res.blocks+'こ(ぴったりは '+st.par+'こ)</div>')
+  +'<div class="sub">'+(
+     kara?'くりかえしを つかって、とことん みじかく できた!'
+     :(pit&&repUnlocked()&&st.parR?'🔁を つかうと、あと'+(st.par-st.parR)+'こ みじかく できるよ!'
+     :(pit?'いちばん すくない ブロックで うごかせた!'
+          :'ぴったりに ちょうせん しても いいし、つぎに すすんでも いいよ')))+'</div>'
+  +'<div class="coinGot">🪙 +'+got+(got<gain?'(きょうは ここまで)':'')+'</div>'
+  +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">'
+  +'<button class="btn ghost" onclick="againStage()">もういちど</button>'
+  +'<button class="btn ghost" onclick="toMap()">マップへ</button>'
+  +(leveledTo?'<button class="btn" onclick="showLevelUp('+leveledTo+')">つぎへ ▶</button>'
+    :(last?'':'<button class="btn" onclick="nextStage()">つぎへ ▶</button>'))
+  +'</div></div></div>';
+}
+
+/* ===== レベルアップ演出 + 新ブロック解禁の説明(rep/if/star 共通) ===== */
+const UNLOCKS={
+ 3:{key:'rep', icon:'🔁', title:'くりかえし ブロック', lines:[
+   '🔁の あとに ブロックを いれると、その ぶんだけ くりかえすよ!',
+   'かいすうは 🔁を タップして かえられる(2〜5かい)。',
+   '🔁の うしろにも ブロックは おけるよ。',
+   'ちゅうい: 🔁の なかに 🔁は いれられないよ!']},
+ 5:{key:'if', icon:'❓', title:'もし ブロック', lines:[
+   '❓の あとに ブロックを いれると、はなの マスに いるときだけ うごくよ!',
+   '❓は 🔁の なかにも いれられる。まわるたびに かわる うごきが つくれるよ。']},
+ 7:{key:'star', icon:'⭐', title:'わざ ブロック', lines:[
+   '⭐は じぶんだけの「わざ」に なまえを つけて、なんども よべる ブロック!',
+   'した の「⭐きんの わざ」を タップして、なかみ(やじるしや🔁)を つくってね。',
+   'メインで ⭐を おすと、その わざを よびだせるよ。',
+   'おなじ うごきが とびとびに でてくる ときに つかうと みじかく できる!']}
+};
+window.showLevelUp=(lv)=>{
+ SFX.clear();
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div class="lvupBadge">Lv'+lv+'</div>'
+  +'<h2>おめでとう!</h2>'
+  +'<div class="pit" style="display:block;margin:8px auto 4px;max-width:fit-content">レベル'+(lv-1)+' クリア!</div>'
+  +'<p class="sub">つぎは レベル'+lv+' だよ</p>'
+  +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">'
+  +'<button class="btn ghost" onclick="toMap()">マップへ</button>'
+  +'<button class="btn" onclick="afterLevelUp('+lv+')">つぎの レベルへ ▶</button>'
+  +'</div></div></div>';
+};
+window.afterLevelUp=(lv)=>{
+ const p=curP();const u=UNLOCKS[lv];
+ if(u && p && !(p.seen&&p.seen[u.key])){ showUnlock(lv); return; }
+ nextStage();
+};
+window.showUnlock=(lv)=>{
+ const u=UNLOCKS[lv];const p=curP();
+ if(p){ if(!p.seen)p.seen={}; p.seen[u.key]=true; save(); }
+ SFX.gacha();
+ // この新ブロックで、これまでのマップの面ももっと短くできるかも(復習動線)。
+ // backLv = 新ブロックが活きる「これまでの」レベル帯の入口(戻り先)。
+ const backLv = lv-1;   // 🔁解禁(lv3)→Lv2 / ❓(lv5)→Lv4 / ⭐(lv7)→Lv6 …これまで遊んだ面へ
+ $('ovl').innerHTML='<div class="overlay"><div class="rcard">'
+  +'<div class="unlockIcon">'+u.icon+'</div>'
+  +'<h2>あたらしい ブロック!</h2>'
+  +'<div class="pit" style="display:block;margin:8px auto 10px;max-width:fit-content">'+u.title+'</div>'
+  +'<div class="unlockBody">'+u.lines.map(l=>'<p>'+l+'</p>').join('')+'</div>'
+  +'<div class="reviewNote">💡 いままでの マップでも、'+u.icon+'を つかうと もっと はやく できる めんが あるかも!</div>'
+  +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">'
+  +'<button class="btn ghost" onclick="reviewMap('+backLv+')">まえの マップを みる</button>'
+  +'<button class="btn" onclick="nextStage()">やってみる!</button>'
+  +'</div></div></div>';
+};
+/* 解禁説明から「まえの マップ」へ。指定レベルのマップを開く */
+window.reviewMap=(lv)=>{$('ovl').innerHTML='';mapLv=Math.max(1,lv);go('map');};
+/* 原っぱ開始: 生成→STAGES末尾スロットに置く→startStage。BASE_N=本編64面 */
+const BASE_STAGE_N=STAGES.length;
+window.startHarappa=(lv)=>{
+ const st=hgen(lv);
+ HARA.stage=st;HARA.best=null;
+ if(STAGES.length===BASE_STAGE_N)STAGES.push(st);else STAGES[BASE_STAGE_N]=st;
+ startStage(BASE_STAGE_N);
+};
+window.nextHarappa=()=>{$('ovl').innerHTML='';startHarappa(STAGES[cur].lv);};
+window.nextStage=()=>{$('ovl').innerHTML='';const i=cur;if(isStagePlayable(i+1)&&!STAGES[i+1].harappa){cur=i+1;fails[cur]=0;drawStage();}else toMap();};
+window.againStage=()=>{$('ovl').innerHTML='';drawStage();};
+window.toMap=()=>{$('ovl').innerHTML='';
+ // いま遊んでいた面の レベルの マップを ひらく(入る前のレベルには戻さない)
+ if(STAGES[cur])mapLv=STAGES[cur].lv;
+ go('map');};
+$('btnUndo').onclick=()=>{
+ if(running)return;
+ if(openC&&openC.body.length){SFX.del();clearAssist();openC.body.pop();drawProg();return;}
+ if(openC&&!openC.body.length){
+  // openC が属するリストを探して取り除く(main/s1/s2 のどれか)
+  SFX.del();clearAssist();
+  for(const sid of ['main','s1','s2']){const L=listFor(sid);const i=L.indexOf(openC);if(i>=0){L.splice(i,1);break;}}
+  openC=null;drawProg();return;
+ }
+ const L=listFor(activeStrip);
+ if(!L.length)return;
+ SFX.del();clearAssist();L.pop();drawProg();
+};
+$('btnClear').onclick=()=>{if(running)return;SFX.del();clearAssist();prog=[];skills={s1:[],s2:[]};openC=null;activeStrip='main';drawProg();};
+$('btnRun').onclick=run;
+// わざストリップのヘッダ: タップで挿入先を切り替え(アクティブが光る)
+['1','2'].forEach(nn=>{const hd=$('wazaHd'+nn);if(hd)hd.onclick=()=>{
+  if(running)return;SFX.tap();const sid='s'+nn;
+  activeStrip=(activeStrip===sid)?'main':sid;   // もう一度押すとメインに戻る
+  openC=null;drawProg();
+  msg(activeStrip==='main'?'':'⭐わざの なかみを つくっています。やじるしや 🔁を いれてね');};});
+// メインの じゅんばん見出しでもメインに戻れる
+{const mh=document.querySelector('.progHd');if(mh)mh.onclick=()=>{if(running)return;if(activeStrip!=='main'){SFX.tap();activeStrip='main';openC=null;drawProg();}};}
+{const fb=$('btnFast');if(fb)fb.onclick=()=>{if(running)return;fastOn=!fastOn;
+  fb.textContent=fastOn?'⏩ はやおくり ON':'⏩ はやおくり';fb.classList.toggle('on',fastOn);};}
+$('btnBackMap').onclick=()=>{if(!running){if(STAGES[cur]&&STAGES[cur].harappa)go('home');else go('map');}};
+
+/* ================= ライト版のロック判定 ================= */
+/* ライト版: Lv1〜3のみ・各レベル前半4面のみ */
+function isStageAllowed(idx){
+ if(idx<0||idx>=STAGES.length)return false;
+ if(!LITE)return true;
+ const st=STAGES[idx];
+ if(st.lv>LITE_MAXLV)return false;
+ const within=STAGES.filter(x=>x.lv===st.lv&&!x.harappa).indexOf(st);
+ return within<LITE_HALF;   // 前半4面
+}
+/* 遊べる=解禁レベル内 かつ ライトで許可 */
+function isStagePlayable(idx){
+ if(idx<0||idx>=STAGES.length)return false;
+ const p=curP();if(!p)return false;
+ if(STAGES[idx].lv>p.level)return false;
+ return isStageAllowed(idx);
+}
+
+/* ================= 画面ルーター ================= */
+const SCREENS=['profiles','home','passport','map','parent','play'];
+/* onclick属性(グローバルスコープで評価される)から呼ぶ関数を window に公開。
+   これらは document-guard ブロック内のローカル定義なので、明示公開しないと
+   ブラウザで "not defined" になりボタンが無反応になる。 */
+function exposeGlobals(){
+ window.$=$;
+ window.go=go; window.startStage=startStage; window.renderMap=renderMap;
+ window.openGacha=openGacha; window.showZukan=showZukan; window.doGacha=doGacha;
+ window.showLevelUp=showLevelUp; window.afterLevelUp=afterLevelUp; window.showUnlock=showUnlock; window.reviewMap=reviewMap;
+ window.showHarappaClear=showHarappaClear;
+ window.renderPassport=renderPassport; window.refreshPassportCloud=refreshPassportCloud; window.charById=charById; window.passportCloudHtml=passportCloudHtml;
+}
+function go(name){
+ SCREENS.forEach(n=>{const el=$('scr-'+n);if(el)el.hidden=(n!==name);});
+ if(name==='profiles')renderProfiles();
+ else if(name==='home')renderHome();
+ else if(name==='passport')renderPassport();
+ else if(name==='map')renderMap();
+ else if(name==='parent')renderParent();
+ // play は startStage() 経由で描画
+ applyTheme();
+}
+function applyTheme(){
+ const p=curP();
+ document.body.dataset.theme=p?p.theme:'adventure';
+}
+
+/* ================= プレイ開始 ================= */
+function startStage(idx){
+ if(!isStagePlayable(idx))return;
+ cur=idx;fails[cur]=0;
+ SCREENS.forEach(n=>{const el=$('scr-'+n);if(el)el.hidden=(n!=='play');});
+ applyTheme();palette();drawStage();
+ // kinder帯: 面の開始時に say を自動読み上げ
+ const p=curP(),st=STAGES[idx];
+ if(p&&GRADES[p.grade]&&GRADES[p.grade].autoRead&&S.settings.read&&st.say)speak(sayText(st.say));
+}
+
+/* ================= 起動 ================= */
+load();
+exposeGlobals();
+if(S.order.length===0)go('profiles');
+else if(S.cur&&S.profiles[S.cur])go('home');
+else go('profiles');
+// 起動時pull(§2.2): 同期設定済みなら静かに最新を取り込む(失敗は無害・独立動作)
+if(S.cloud&&S.cloud.pass){
+ cloudPull().then(()=>{ if(!$('scr-map').hidden)renderMap(); else if(!$('scr-home').hidden)renderHome(); }).catch(()=>{});
+}
+window.addEventListener('resize',()=>{if(!$('scr-play').hidden&&!running)drawStage();});
+}
+</script>
+</body>
+</html>
