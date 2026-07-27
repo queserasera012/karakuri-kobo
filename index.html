@@ -15,7 +15,7 @@
 <script>
 /* ===== BUILD CONFIG (build.jsが書き換える。手動編集しない) ===== */
 const EDITION = "lite";      // "full" | "lite"
-const APP_VERSION = "1.9.5";
+const APP_VERSION = "1.9.7";
 const STORE_URL = "https://shinme-lab.booth.pm/";
 const LITE = (EDITION === "lite");
 const VER  = (APP_VERSION.indexOf("__")===0) ? "dev" : APP_VERSION;
@@ -402,6 +402,12 @@ body{
 @keyframes splash{0%{transform:translateY(0);opacity:1}60%{transform:translateY(45%) scale(.9);opacity:1}100%{transform:translateY(80%) scale(.7);opacity:0}}
 #moko.cheer{animation:cheer .55s ease 2}
 @keyframes cheer{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22%) rotate(-7deg)}}
+.node.karaHint{border-color:var(--gold);box-shadow:0 0 0 2px rgba(255,201,77,.35),0 0 14px rgba(255,201,77,.30);animation:karaGlow 2.4s ease-in-out infinite}
+@keyframes karaGlow{0%,100%{box-shadow:0 0 0 2px rgba(255,201,77,.28),0 0 10px rgba(255,201,77,.22)}
+ 50%{box-shadow:0 0 0 3px rgba(255,201,77,.50),0 0 18px rgba(255,201,77,.42)}}
+.reviewNote.gold{border-color:rgba(255,201,77,.45);background:rgba(255,201,77,.10);color:var(--gold)}
+.node .karaTag{display:block;margin-top:3px;font-size:10.5px;font-weight:900;color:var(--gold);letter-spacing:.02em}
+@media (prefers-reduced-motion:reduce){.node.karaHint{animation:none}}
 .fx.lap{color:var(--gold);font-weight:900;text-shadow:0 0 6px rgba(255,201,77,.5)}
 .fx{position:absolute;z-index:6;font-family:"Mochiy Pop One";font-weight:400;
   color:var(--moon);text-shadow:0 2px 0 rgba(0,0,0,.4);font-size:1rem;
@@ -1212,20 +1218,52 @@ function hgen(lv){
    if(mv.length>20)continue;
    st=hboard(6,mv,{rocks:hrnd(3)});
   }else{
-   // Lv7〜8: モチーフ(2〜4手)×2〜3回+不規則接着1〜3手。宝箱2・岩0〜3・〜20手
-   const m=hmotif(2+hrnd(3)), rep=2+hrnd(2);
-   let mv=[];
-   for(let i=0;i<rep;i++){
-    mv=mv.concat(m);
-    if(i<rep-1){
-     const glueLen=1+hrnd(3);
-     for(let g=0;g<glueLen;g++)mv.push(hpick(HPERP[mv[mv.length-1]]||['D']));
+   // Lv7〜8: 本編と同じ「拠点」型。本道を進み、拠点で潜って宝を取り、また戻る。
+   // 同じ動きの繰り返しなので ⭐わざを作って呼ぶのが自然な解になる。
+   // Lv8は深さを2種類まぜる(あさい/ふかい)=わざ2本の出番。
+   // ※往復で経路が重なるため hwalk は使えない(自己交差扱い)。Lv5と同じく盤を直接組む。
+   const W=6+hrnd(5);                   // 本道 6〜10
+   const nB=3+hrnd(2);                  // 拠点 3〜4本
+   const twoDepth=(lv>=8);
+   const up=hrnd(2)===1;                // 上に登る型 / 下に潜る型
+   const digD=up?'U':'D', backD=up?'D':'U';
+   const xs=[];let guard=0;
+   while(xs.length<nB&&guard<30){guard++;
+    const x=1+hrnd(W-1);
+    if(!xs.some(v=>Math.abs(v-x)<2))xs.push(x);
+   }
+   if(xs.length<2)continue;
+   xs.sort((a,b)=>a-b);
+   const mv=[];const branchCells=[];const chests=[];
+   let bi=0;
+   for(let x=1;x<=W;x++){
+    mv.push('R');
+    if(xs.includes(x)){
+     const depth=twoDepth?(bi%2===0?2:3):2; bi++;
+     const bc=[];
+     for(let d=1;d<=depth;d++){mv.push(digD);bc.push([x,up?-d:d]);}
+     for(let d=depth;d>=1;d--)mv.push(backD);
+     branchCells.push(bc);
+     chests.push([x,up?-depth:depth]);
     }
    }
-   if(mv.length>20)continue;
-   const cells=hwalk(mv);if(!cells)continue;
-   const mid=cells[Math.floor(cells.length/2)];
-   st=hboard(lv,mv,{chests:[mid,cells[cells.length-1]],rocks:hrnd(4)});
+   if(!chests.length||mv.length>34)continue;
+   // 盤を直接組む(本道 y=0 + 脇道)。上に伸びる型は y が負になるので下駄をはかせる
+   const mainCells=[];for(let x=0;x<=W;x++)mainCells.push([x,0]);
+   let all=mainCells.slice();branchCells.forEach(bc=>all=all.concat(bc));
+   const miny=Math.min.apply(null,all.map(c=>c[1]));
+   const off=1-miny;                    // y=miny を 1 に合わせる
+   const land=new Map();
+   all.forEach(c=>land.set((c[0]+1)+','+(c[1]+off)+'','g'));
+   const maxy=Math.max.apply(null,all.map(c=>c[1]));
+   const w=W+3, h=(maxy+off)+2;
+   const grid=[];
+   for(let yy=0;yy<h;yy++){const row=[];
+    for(let xx=0;xx<w;xx++)row.push(land.get(xx+','+yy)||'s');
+    grid.push(row.join(' '));}
+   st={id:'はらっぱ',lv:lv,name:'れんしゅうの はらっぱ',harappa:true,
+    hint:'おなじ うごきは ⭐わざに まとめると らくだよ',grid:grid,start:[1,0+off],
+    chests:chests.map(c=>[c[0]+1,c[1]+off]),sol:mv};
   }
   if(!st)continue;
   // 盤サイズ上限(本編最大と同じ16×16。スマホで潰れない)
@@ -1250,7 +1288,13 @@ const MAXBLK=12;
 let cur=0, prog=[], running=false, openC=null;  // openC: 編集中のコンテナ(🔁または❓)
 // 速い2連続タップの誤爆防止(iOSでdrawProg後のDOM再生成に2つ目のタップが当たる問題)
 let _lastTap=0;
-function tapLock(ms){const now=Date.now();if(now-_lastTap<(ms||90))return true;_lastTap=now;return false;}
+function tapLock(e,ms){
+ // 判定は「タップが起きた時刻」で行う。処理(描画)に時間がかかっても、
+ // 同じ1回のタップから生まれた2つ目のイベントを確実に弾ける。
+ const now=(e&&typeof e.timeStamp==='number'&&e.timeStamp>0)?e.timeStamp:performance.now();
+ if(now-_lastTap<(ms||90))return true;
+ _lastTap=now;return false;
+}
 let fastOn=false;  // はやおくり(Lv6解禁)
 let skills={s1:[],s2:[]};   // ⭐わざの中身(Lv7〜)
 let activeStrip='main';     // 挿入先: 'main' | 's1' | 's2'
@@ -1373,21 +1417,21 @@ function drawProg(){
 /* 1本のストリップ要素にイベントを束ねる(メイン・わざ共通) */
 function bindStripEvents(s){
  s.querySelectorAll('[data-del]').forEach(el=>{
-  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.del();clearAssist();delAt(el.dataset.del);drawProg();};
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock(e))return;SFX.del();clearAssist();delAt(el.dataset.del);drawProg();};
  });
  s.querySelectorAll('[data-cyc]').forEach(el=>{
-  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock(e))return;SFX.tap();
    const b=nodeAt(el.dataset.cyc);b.r=b.r>=5?2:b.r+1;drawProg();};
  });
  s.querySelectorAll('[data-tog]').forEach(el=>{
-  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock(e))return;SFX.tap();
    const b=nodeAt(el.dataset.tog);openC=(openC===b)?null:b;
    activeStrip=splitPath(el.dataset.tog).sid;   // 触ったストリップに挿入先を追従
    drawProg();
    msg(openC?'🔁の なかに いれています。おわったら ✓ を おしてね':'');};
  });
  s.querySelectorAll('[data-done]').forEach(el=>{
-  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock())return;SFX.tap();
+  el.onclick=(e)=>{e.stopPropagation();if(running)return;if(tapLock(e))return;SFX.tap();
    const parent=parentOf(el.dataset.done);
    openC=parent||null;
    activeStrip=splitPath(el.dataset.done).sid;
@@ -1395,7 +1439,7 @@ function bindStripEvents(s){
    msg(openC?'🔁の なかを つづけて いれられるよ。おわったら ✓':'つぎの ブロックは うしろに はいるよ');};
  });
  // 余白タップ: そのストリップをアクティブにしつつ、開いているコンテナは閉じる
- s.onclick=()=>{if(running)return;if(tapLock())return;const sid=s.dataset.strip;
+ s.onclick=(e)=>{if(running)return;if(tapLock(e))return;const sid=s.dataset.strip;
   if(openC){SFX.tap();openC=null;drawProg();msg('');return;}
   if(activeStrip!==sid){SFX.tap();activeStrip=sid;drawProg();}};
 }
@@ -1469,9 +1513,9 @@ function palette(){
   +(wazaUnlocked()?'<button class="pal star" data-d="STAR" title="わざ">⭐</button>':'')
   +(waza2Unlocked()?'<button class="pal star" data-d="STAR2" title="ぎんのわざ">🌟</button>':'');
  document.querySelectorAll('.pal').forEach(el=>{
-  el.onclick=()=>{
+  el.onclick=(e)=>{
    if(running)return;
-   if(tapLock())return;
+   if(tapLock(e))return;
    const dd=el.dataset.d;
    const cap=(STAGES[cur]&&STAGES[cur].maxBlocks)||MAXBLK;
    if(totalBlocks(prog,skills)>=cap){
@@ -1829,6 +1873,9 @@ function renderMap(){
   const allowed=isStageAllowed(idx);
   const playable=isStagePlayable(idx);
   let cls='node',inner='';
+  // ⚙️からくり賞が まだ 狙える面(🔁解禁後・parRあり・未取得)は枠を金色に光らせる
+  const karaChance = playable && repUnlocked() && st.parR && !(rec&&rec.kara);
+  if(karaChance)cls+=' karaHint';
   if(!allowed){cls+=' lite';inner='<span class="nlk">🔒</span>';}
   else if(!playable){cls+=' soon';inner='<span class="nlk">･</span>';}
   else{
@@ -1837,6 +1884,7 @@ function renderMap(){
     const stars=rec.pit?'⭐⭐⭐':'⭐⭐';
     inner+='<span class="nstars">'+stars+(rec.kara?'⚙️':'')+'</span>';
    }else inner+='<span class="nstars dim">・・</span>';
+   if(karaChance)inner+='<span class="karaTag">⚙️ ねらえる!</span>';
   }
   h+='<button class="'+cls+'" '+(playable?'onclick="startStage('+idx+')"':(!allowed?'onclick="liteLock()"':'disabled'))+'>'
    +'<span class="nid">'+st.id+'</span>'+inner+'</button>';
@@ -2344,6 +2392,8 @@ window.showUnlock=(lv)=>{
   +'<div class="pit" style="display:block;margin:8px auto 10px;max-width:fit-content">'+u.title+'</div>'
   +'<div class="unlockBody">'+u.lines.map(l=>'<p>'+l+'</p>').join('')+'</div>'
   +'<div class="reviewNote">💡 いままでの マップでも、'+u.icon+'を つかうと もっと はやく できる めんが あるかも!</div>'
+  +(lv===3?'<div class="reviewNote gold">⚙️ <b>からくりしょう</b>は Lv1〜Lv2の めんに かくれているよ。'
+    +'マップで <b>きんいろに ひかっている めん</b>が ねらいめ!</div>':'')
   +'<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">'
   +'<button class="btn ghost" onclick="reviewMap('+backLv+')">まえの マップを みる</button>'
   +'<button class="btn" onclick="nextStage()">やってみる!</button>'
