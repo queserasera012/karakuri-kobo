@@ -15,7 +15,7 @@
 <script>
 /* ===== BUILD CONFIG (build.jsが書き換える。手動編集しない) ===== */
 const EDITION = "lite";      // "full" | "lite"
-const APP_VERSION = "1.9.8";
+const APP_VERSION = "1.10.2";
 const STORE_URL = "https://shinme-lab.booth.pm/items/8654504";
 const LITE = (EDITION === "lite");
 const VER  = (APP_VERSION.indexOf("__")===0) ? "dev" : APP_VERSION;
@@ -406,6 +406,44 @@ body{
 @keyframes karaGlow{0%,100%{box-shadow:0 0 0 2px rgba(255,201,77,.28),0 0 10px rgba(255,201,77,.22)}
  50%{box-shadow:0 0 0 3px rgba(255,201,77,.50),0 0 18px rgba(255,201,77,.42)}}
 .reviewNote.gold{border-color:rgba(255,201,77,.45);background:rgba(255,201,77,.10);color:var(--gold)}
+/* きせかえ */
+.thGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.thOpt{position:relative;background:var(--card);border:2px solid var(--line);border-radius:16px;
+  padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer}
+.thOpt.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(255,201,77,.3)}
+.thOpt .thName{font-size:12.5px;font-weight:900;color:var(--ink)}
+.thOpt .thNow{font-size:10.5px;font-weight:900;color:var(--night);background:var(--gold);
+  border-radius:999px;padding:1px 8px}
+.thSwatch{display:flex;gap:3px}
+.thSwatch i{width:16px;height:26px;border-radius:5px;display:block}
+.thSwatch[data-theme="adventure"] i:nth-child(1){background:#141B36}
+.thSwatch[data-theme="adventure"] i:nth-child(2){background:#22305F}
+.thSwatch[data-theme="adventure"] i:nth-child(3){background:#FFC94D}
+.thSwatch[data-theme="ocean"] i:nth-child(1){background:#0E2A3D}
+.thSwatch[data-theme="ocean"] i:nth-child(2){background:#17506B}
+.thSwatch[data-theme="ocean"] i:nth-child(3){background:#6FE3E1}
+.thSwatch[data-theme="pastel"] i:nth-child(1){background:#3A2140}
+.thSwatch[data-theme="pastel"] i:nth-child(2){background:#5E3566}
+.thSwatch[data-theme="pastel"] i:nth-child(3){background:#FFB3D1}
+.thSwatch[data-theme="forest"] i:nth-child(1){background:#122A1E}
+.thSwatch[data-theme="forest"] i:nth-child(2){background:#1F4A33}
+.thSwatch[data-theme="forest"] i:nth-child(3){background:#8FE08A}
+.thSwatch[data-theme="sunset"] i:nth-child(1){background:#3A1B22}
+.thSwatch[data-theme="sunset"] i:nth-child(2){background:#6E2F33}
+.thSwatch[data-theme="sunset"] i:nth-child(3){background:#FFA45C}
+button.coinPill.tap{cursor:pointer}
+button.coinPill.tap:active{transform:scale(.96)}
+/* バージョン表示: 常に出るが、タップは透過して操作を邪魔しない */
+#verBadge{position:fixed;right:8px;bottom:calc(6px + env(safe-area-inset-bottom,0px));
+  z-index:60;pointer-events:none;user-select:none;
+  font-family:"Roboto Mono",monospace;font-size:10px;font-weight:500;letter-spacing:.02em;
+  color:var(--ink);background:rgba(20,27,54,.72);border:1px solid var(--line);
+  border-radius:999px;padding:2px 9px;opacity:.85}
+#verBadge.lite{color:var(--night);background:var(--gold);border-color:var(--goldD);opacity:.9;font-weight:700}
+@media (max-width:360px){#verBadge{font-size:9px;padding:1px 6px}}
+.gNeed{background:rgba(255,201,77,.10);border:2px solid rgba(255,201,77,.4);border-radius:14px;
+  padding:9px 12px;margin:0 0 12px;font-size:13.5px;color:var(--gold);font-weight:900;line-height:1.7}
+.gNeed .mut{font-weight:700}
 .node .karaTag{display:block;margin-top:3px;font-size:10.5px;font-weight:900;color:var(--gold);letter-spacing:.02em}
 @media (prefers-reduced-motion:reduce){.node.karaHint{animation:none}}
 .fx.lap{color:var(--gold);font-weight:900;text-shadow:0 0 6px rgba(255,201,77,.5)}
@@ -710,6 +748,8 @@ body{
 </div>
 </div><!-- /scr-play -->
 <div id="ovl"></div>
+<!-- バージョン/版種の常時表示(タップは透過させて操作を邪魔しない) -->
+<div id="verBadge" aria-hidden="true"></div>
 
 <script>
 /* ================= 純粋エンジン(ヘッドレステスト対象) =================
@@ -1805,7 +1845,8 @@ function renderHome(){
  const tw=towerStats();
  let h='<div class="wrap"><div class="hometop">'
   +'<button class="btn ghost small" onclick="go(\'profiles\')">'+p.avatar+' '+esc(p.name)+'</button>'
-  +'<span class="sp"></span><div class="coinPill">🪙 '+p.coins+'</div></div>';
+  +'<span class="sp"></span>'
+  +'<button class="coinPill tap" onclick="openGacha()" title="ガチャ">🪙 '+p.coins+'</button></div>';
  h+='<div class="hero" style="margin:6px 0 14px"><h1>⚙️ からくり工房</h1>'
   +'<p class="mut">きょうは なにを する?</p></div>';
  h+='<div class="homeGrid">';
@@ -1817,6 +1858,13 @@ function renderHome(){
   +'<span class="hName">かぞくの からくり塔</span><span class="hSub">いま '+tw.dan+'だん</span></button>';
  h+='<button class="homeCard" onclick="go(\'parent\')"><span class="hIcon">🔑</span>'
   +'<span class="hName">おうちのかた</span><span class="hSub">せってい・どうき</span></button>';
+ h+='</div>';
+ h+='<div class="homeGrid">';
+ h+='<button class="homeCard" onclick="openGacha()"><span class="hIcon">🎁</span>'
+  +'<span class="hName">ガチャ・ずかん</span><span class="hSub">'
+  +(p.coins>=30?'いま ひけるよ!':'30コインで 1たい')+'</span></button>';
+ h+='<button class="homeCard" onclick="openKisekae()"><span class="hIcon">🎨</span>'
+  +'<span class="hName">きせかえ</span><span class="hSub">'+(THEME_LABEL[p.theme]||'いろを かえる')+'</span></button>';
  h+='</div>';
  h+='<button class="homeCard wide" onclick="go(\'passport\')"><span class="hIcon">🎫</span>'
   +'<span class="hName">パスポート</span><span class="hSub">かぞくの きろくと あつめたもの</span></button>';
@@ -1989,9 +2037,13 @@ window.openGacha=()=>{
   +'<h2>🎁 ガチャ</h2>'
   +'<div class="mut" style="margin:4px 0 12px">30コインで からくり なかまを 1たい</div>'
   +'<div class="coinPill" style="margin:0 auto 12px">🪙 '+p.coins+'</div>';
- h+='<div style="display:flex;gap:10px;justify-content:center;margin-bottom:12px">'
-  +'<button class="btn'+(p.coins<30?' ':'')+'" '+(p.coins<30?'disabled':'onclick="doGacha()"')+'>ひく!</button>'
+ const short=Math.max(0,30-p.coins);
+ h+='<div style="display:flex;gap:10px;justify-content:center;margin-bottom:'+(short?'6px':'12px')+'">'
+  +'<button class="btn'+(short?' ':'')+'" '+(short?'disabled':'onclick="doGacha()"')+'>ひく!</button>'
   +'<button class="btn ghost" onclick="showZukan()">ずかん '+owned+'/'+total+'</button></div>';
+ // 押せない理由を はっきり伝える(だまって無反応にしない)
+ if(short)h+='<div class="gNeed">あと <b>'+short+'</b> コインで ひけるよ!<br>'
+  +'<span class="mut">めんを クリアすると コインが もらえます</span></div>';
  h+='<button class="btn ghost small" onclick="$(\'ovl\').innerHTML=\'\';renderMap()">とじる</button>';
  h+='</div></div>';
  $('ovl').innerHTML=h;
@@ -2104,8 +2156,11 @@ function renderParent(){
  // なかま管理
  h+='<div class="psec"><div class="reglbl">なかま</div>';
  S.order.forEach(id=>{const q=S.profiles[id];
-  h+='<div class="prow"><span>'+q.avatar+' '+esc(q.name)+'</span>'
-   +'<button class="btn ghost small" onclick="delProfile(\''+id+'\')">けす</button></div>';});
+  h+='<div class="prow"><span>'+q.avatar+' '+esc(q.name)
+   +' <span class="mut" style="font-size:11.5px">'+(THEME_LABEL[q.theme]||'')+'</span></span>'
+   +'<span style="display:flex;gap:6px">'
+   +'<button class="btn ghost small" onclick="openKisekae(1,\''+id+'\')">🎨 きせかえ</button>'
+   +'<button class="btn ghost small" onclick="delProfile(\''+id+'\')">けす</button></span></div>';});
  h+='</div>';
  h+='</div>';
  el.innerHTML=h;
@@ -2484,6 +2539,47 @@ function go(name){
  // play は startStage() 経由で描画
  applyTheme();
 }
+/* ===== きせかえ(いろの へんこう) =====
+   子ども自身が いつでも 変えられる。おうちのかたメニューからも 変えられる。 */
+window.openKisekae=(fromParent,uuid)=>{
+ const p=uuid?S.profiles[uuid]:curP(); if(!p)return;
+ SFX.tap();
+ let h='<div class="overlay"><div class="rcard">'
+  +'<h2>🎨 きせかえ</h2>'
+  +'<div class="mut" style="margin:4px 0 12px">'+esc(p.name)+' の いろを えらんでね</div>'
+  +'<div class="thGrid">';
+ THEMES.forEach(t=>{
+  h+='<button class="thOpt'+(p.theme===t?' on':'')+'" data-th="'+t+'" '
+   +'onclick="pickTheme(\''+t+'\','+(fromParent?'1':'0')+',\''+(uuid||'')+'\')">'
+   +'<span class="thSwatch" data-theme="'+t+'"><i></i><i></i><i></i></span>'
+   +'<span class="thName">'+(THEME_LABEL[t]||t)+'</span>'
+   +(p.theme===t?'<span class="thNow">いま これ</span>':'')
+   +'</button>';
+ });
+ h+='</div>';
+ h+='<button class="btn" onclick="closeKisekae('+(fromParent?'1':'0')+')">とじる</button>';
+ h+='</div></div>';
+ $('ovl').innerHTML=h;
+};
+window.pickTheme=(t,fromParent,uuid)=>{
+ const p=uuid?S.profiles[uuid]:curP(); if(!p)return;
+ p.theme=t; touchProfile(p); save();
+ SFX.tap();
+ // すぐ見た目に反映(自分のプロフィールを変えたときだけ)
+ if(!uuid || uuid===S.cur)document.body.dataset.theme=t;
+ openKisekae(fromParent,uuid);   // 選択状態を出し直す
+};
+window.closeKisekae=(fromParent)=>{
+ $('ovl').innerHTML='';
+ if(fromParent)renderParent(); else renderHome();
+};
+/* バージョンと版種を画面のすみに出す(どの版を触っているか いつでも分かるように) */
+function showVersionBadge(){
+ const el=$('verBadge'); if(!el)return;
+ // フル版は バージョンだけ / おためし版は 版種も出す
+ el.textContent=LITE?('v'+APP_VERSION+' ・ おためし版'):('v'+APP_VERSION);
+ el.className=LITE?'lite':'';
+}
 function applyTheme(){
  const p=curP();
  document.body.dataset.theme=p?p.theme:'adventure';
@@ -2503,6 +2599,7 @@ function startStage(idx){
 /* ================= 起動 ================= */
 load();
 exposeGlobals();
+showVersionBadge();
 if(S.order.length===0)go('profiles');
 else if(S.cur&&S.profiles[S.cur])go('home');
 else go('profiles');
