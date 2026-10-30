@@ -15,8 +15,9 @@
 <script>
 /* ===== BUILD CONFIG (build.jsが書き換える。手動編集しない) ===== */
 const EDITION = "lite";      // "full" | "lite"
-const APP_VERSION = "1.10.2";
-const STORE_URL = "https://shinme-lab.booth.pm/items/8654504";
+const APP_VERSION = "1.10.3";
+// 2026-10-30：買う先を BOOTH から App Store 版（iPhone・iPad・はじめの12面は無料）に変えた
+const STORE_URL = "https://apps.apple.com/app/id6812403692";
 const LITE = (EDITION === "lite");
 const VER  = (APP_VERSION.indexOf("__")===0) ? "dev" : APP_VERSION;
 const SHOP = (STORE_URL.indexOf("__")===0) ? "" : STORE_URL;
@@ -1635,6 +1636,8 @@ function renderProfiles(){
   h+='<div class="pcard locked"><span class="pav">🔒</span><span class="pnm">フルばんは 12にん</span></div>';
  h+='</div>';
  h+='<div class="pfoot"><button class="btn ghost small" onclick="go(\'parent\')">🔑 おうちのかた</button></div>';
+ // 2026-10-30：iPhone・iPad のアプリ版への案内（フル版・おためし版とも）
+ if(SHOP)h+='<div class="pfoot"><a class="mut sm" href="'+esc(SHOP)+'" target="_blank" rel="noopener">📱 iPhone・iPad の アプリばん（App Store）</a></div>';
  h+='</div>';
  el.innerHTML=h;
 }
@@ -1964,8 +1967,8 @@ function toast(msg){
 window.liteLock=()=>{
  $('ovl').innerHTML='<div class="overlay" onclick="if(event.target===this)this.remove()"><div class="rcard">'
   +'<div style="font-size:2.4rem">🔒</div>'
-  +'<h2>ここは フルばん</h2>'
-  +'<p class="mut" style="margin:8px 0 14px">この さきの めんは、フルばんで あそべるよ。<br>おうちの ひとに きいてみてね!</p>'
+  +'<h2>ここは アプリばん</h2>'
+  +'<p class="mut" style="margin:8px 0 14px">この さきの めんは、iPhone・iPad の アプリで あそべるよ。<br>おうちの ひとに きいてみてね!</p>'
   +'<div style="display:flex;gap:10px;justify-content:center">'
   +'<button class="btn ghost" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button>'
   +'<button class="btn" onclick="liteParent()">おうちの ひとに みせる</button></div>'
@@ -1974,14 +1977,14 @@ window.liteLock=()=>{
 window.liteParent=()=>{
  $('ovl').innerHTML='<div class="overlay" onclick="if(event.target===this)this.remove()"><div class="rcard" style="text-align:left">'
   +'<h2 style="text-align:center">おうちのかたへ</h2>'
-  +'<p class="mut" style="font-size:.82rem;line-height:1.9;margin:8px 0">これは<b>おためし版</b>です。プログラミング的思考をはぐくむ学習アプリ「モコのからくり工房」のフル版では、以下が楽しめます。</p>'
+  +'<p class="mut" style="font-size:.82rem;line-height:1.9;margin:8px 0">これは<b>おためし版</b>です。プログラミング的思考をはぐくむ学習アプリ「モコのからくり工房」は、<b>iPhone・iPad のアプリ</b>（App Store）で続きが遊べます。はじめの12面は無料、のこりは1回の買い切り（¥400）で、ファミリー共有もできます。</p>'
   +'<ul class="lkul">'
-  +'<li><b>Lv1〜8の全64面</b>(おためし版はLv1〜3の前半のみ)</li>'
+  +'<li><b>Lv1〜8の全64面</b>(おためし版とアプリの無料分はLv1〜3の前半)</li>'
   +'<li><b>くりかえし・じょうけん・わざ</b>など、より高度な思考</li>'
   +'<li><b>なかま12人 ／ ずかん24体</b></li>'
   +'</ul>'
   +'<div style="text-align:center;margin-top:12px">'
-  +(SHOP?'<a class="btn" href="'+esc(SHOP)+'" target="_blank" rel="noopener">フルばんを みる</a>':'<span class="mut">(はんばい じゅんび中)</span>')
+  +(SHOP?'<a class="btn" href="'+esc(SHOP)+'" target="_blank" rel="noopener">App Store で みる</a>':'<span class="mut">(はんばい じゅんび中)</span>')
   +'</div>'
   +'<div style="text-align:center;margin-top:10px"><button class="btn ghost small" onclick="$(\'ovl\').innerHTML=\'\'">とじる</button></div>'
   +'</div></div>';
